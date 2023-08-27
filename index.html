@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your GitHub Pages Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .container {
+            margin-top: 50px; /* Adjust this value to push content below the top bar */
+            padding: 20px;
+        }
+    </style>
+</head>
 <body>
-<h1><code>Some code</code>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="top-bar">
+        <button id="randomButton">Random</button>
+        <input type="text" id="nameInput" placeholder="Name">
+        <select id="genderSelect">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="number" id="ageInput" placeholder="Age">
+        <button id="generateButton">Generate</button>
+    </div>
+    <div class="container">
+        <!-- Your main content goes here -->
+    </div>
 </body>
 </html>
+
