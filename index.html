@@ -18,6 +18,17 @@
             top: 0;
             left: 0;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
         }
         .container {
             margin-top: 50px; /* Adjust this value to push content below the top bar */
@@ -27,19 +38,22 @@
 </head>
 <body>
     <div class="top-bar">
-        <button id="randomButton">Random</button>
-        <input type="text" id="nameInput" placeholder="Name">
-        <select id="genderSelect">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-        <input type="number" id="ageInput" placeholder="Age">
-        <button id="generateButton">Generate</button>
+        <div class="top-bar-left">
+            <button id="randomButton">Random</button>
+        </div>
+        <div class="top-bar-right">
+            <input type="text" id="nameInput" placeholder="Name">
+            <select id="genderSelect">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="number" id="ageInput" placeholder="Age">
+            <button id="generateButton">Generate</button>
+        </div>
     </div>
     <div class="container">
         <!-- Your main content goes here -->
     </div>
 </body>
 </html>
-
