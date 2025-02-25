@@ -7,9 +7,200 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><h1>Hello, World!</h1></header>
-<main> </main>
-<footer> </footer>
+<header>
+    <p><blockquote id="quote">If more people are present at my funeral than were at my birth then I shall have succeeded in life -
+        <cite><h1>Ian Umney</h1></cite>
+        </blockquote>
+    </p>
+</header>
+<main>
+    <br>
+    <hr>
+    <br>
+    <h2>Quick Links</h2>
+    <div class="profile">
+        <div class="box">Heroes</div>
+        <div class="box">Updates</div>
+        <div class="box">Exchange</div>
+        <div class="box">Gallery</div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+
+</main>
+<footer>
+    <div class="linkList">
+        <a href="mailto:ianumney@icloud.com" title="IanUmney@iCloud.com">Email</a>
+        <a href="tel:+447845155705" title="(+44)7845155705">Call Me</a>
+        <a href="https://www.google.com/search?q=ian+umney" target="_blank">Google</a>
+        <a href="https://www.tiktok.com/@ian_umney" target="_blank">TikTok</a>
+        <a href="https://github.com/IanUmney" target="_blank">GitHub</a>
+    </div>
+    <hr>
+    <div class="copyright">Copyright &copy 2025 Ian Umney. All rights reserved.</div>
+</footer>
 <script src="app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Styles -->
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <!-- Chart code -->
+    <script>
+        am5.ready(function() {
+
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+
+
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+
+    // Create the map chart
+    // https://www.amcharts.com/docs/v5/charts/map-chart/
+            var chart = root.container.children.push(am5map.MapChart.new(root, {
+                panX: "rotateX",
+                panY: "rotateY",
+                projection: am5map.geoOrthographic()
+            }));
+
+
+    // Create series for background fill
+    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
+            var backgroundSeries = chart.series.push(
+                am5map.MapPolygonSeries.new(root, {})
+            );
+            backgroundSeries.mapPolygons.template.setAll({
+                fill: root.interfaceColors.get("alternativeBackground"),
+                fillOpacity: 0.1,
+                strokeOpacity: 0
+            });
+            backgroundSeries.data.push({
+                geometry:
+                    am5map.getGeoRectangle(90, 180, -90, -180)
+            });
+
+
+    // Create main polygon series for countries
+    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
+            var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+                geoJSON: am5geodata_worldLow
+            }));
+            polygonSeries.mapPolygons.template.setAll({
+                fill: root.interfaceColors.get("alternativeBackground"),
+                fillOpacity: 0.15,
+                strokeWidth: 0.5,
+                stroke: root.interfaceColors.get("background")
+            });
+
+
+    // Create polygon series for projected circles
+            var circleSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+            circleSeries.mapPolygons.template.setAll({
+                templateField: "polygonTemplate",
+                tooltipText: "{name}:{value}"
+            });
+
+    // Define data
+            var colors = am5.ColorSet.new(root, {});
+
+            var data = [
+                { "id": "UA", "name": "Ukraine", "value":9999, polygonTemplate: { fill: colors.getIndex(0) } },
+                { "id": "AU", "name": "Australia", "value": 99999, polygonTemplate: { fill: colors.getIndex(8) } },
+                { "id": "BN", "name": "Brunei", "value": 9999, polygonTemplate: { fill: colors.getIndex(0) } },
+                { "id": "BG", "name": "Bulgaria", "value": 9999, polygonTemplate: { fill: colors.getIndex(8) } },
+                { "id": "DE", "name": "Germany", "value": 9989, polygonTemplate: { fill: colors.getIndex(2) } },
+                { "id": "FR", "name": "France", "value": 9999, polygonTemplate: { fill: colors.getIndex(2) } },
+                { "id": "ES", "name": "Spain", "value": 9999, polygonTemplate: { fill: colors.getIndex(2) } },
+                { "id": "NL", "name": "Netherlands", "value": 9999, polygonTemplate: { fill: colors.getIndex(4) } },
+                { "id": "US", "name": "USA", "value": 9999, polygonTemplate: { fill: colors.getIndex(2) } },
+                { "id": "IT", "name": "Italy", "value": 9999, polygonTemplate: { fill: colors.getIndex(8) } },
+                { "id": "CU", "name": "Cuba", "value": 9999, polygonTemplate: { fill: colors.getIndex(4) } },
+                { "id": "PL", "name": "Poland", "value": 9999, polygonTemplate: { fill: colors.getIndex(8) } },
+                { "id": "CZ", "name": "Czech Rep.", "value": 9999, polygonTemplate: { fill: colors.getIndex(8) } },
+                { "id": "NZ", "name": "New Zealand", "value": 9999, polygonTemplate: { fill: colors.getIndex(2) } }
+            ];
+
+            var valueLow = Infinity;
+            var valueHigh = -Infinity;
+
+            for (var i = 0; i < data.length; i++) {
+                var value = data[i].value;
+                if (value < valueLow) {
+                    valueLow = value;
+                }
+                if (value > valueHigh) {
+                    valueHigh = value;
+                }
+            }
+
+    // radius in degrees
+            var minRadius = 0.5;
+            var maxRadius = 5;
+
+    // Create circles when data for countries is fully loaded.
+            polygonSeries.events.on("datavalidated", function () {
+                circleSeries.data.clear();
+
+                for (var i = 0; i < data.length; i++) {
+                    var dataContext = data[i];
+                    var countryDataItem = polygonSeries.getDataItemById(dataContext.id);
+                    var countryPolygon = countryDataItem.get("mapPolygon");
+
+                    var value = dataContext.value;
+
+                    var radius = minRadius + maxRadius * (value - valueLow) / (valueHigh - valueLow);
+
+                    if (countryPolygon) {
+                        var geometry = am5map.getGeoCircle(countryPolygon.visualCentroid(), radius);
+                        circleSeries.data.push({
+                            name: dataContext.name,
+                            value: dataContext.value,
+                            polygonTemplate: dataContext.polygonTemplate,
+                            geometry: geometry
+                        });
+                    }
+                }
+            })
+
+
+    // Make stuff animate on load
+            chart.appear(1000, 100);
+
+        }); // end am5.ready()
+    </script>
+
+    <!-- HTML -->
+    <div id="chartdiv"></div>
