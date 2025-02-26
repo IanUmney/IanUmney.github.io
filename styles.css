@@ -141,6 +141,7 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 0 0 5px 0;
+    margin-top: 20px;
 }
 
 a:hover {
@@ -164,6 +165,9 @@ button:active {
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-#btn1 {
-
+.spann {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
