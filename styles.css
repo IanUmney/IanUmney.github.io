@@ -4,13 +4,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    /*max-width: 1000px;*/
 }
 
-.copyright {
-    margin-top: 5px;
-    text-align: center;
-    font-size: small;
-}
+
 
 .error {
     height: 100%;
@@ -22,9 +19,27 @@
 
 }
 
-h1 {
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: #41533b;
+    padding: 5px;
+    padding-bottom: 10px;
+}
+.banner {
+    text-align: center;
+    vert-align: middle;
+}
+#uaFlag {
+    float: left;
+    box-shadow: 2px 5px 5px #2a2a2a;
+    height: auto;
+}
+#su {
     color: dodgerblue;
-    text-shadow: 1px 2px 2px #3a3a3a
+    text-shadow: 1px 2px 2px #3a3a3a;
+    margin-bottom: 5px;
 }
 
 body
@@ -35,119 +50,26 @@ body
     background-color: whitesmoke;
     text-align: center;
 }
-
+main {
+    /*flex: 1;*/
+}
+h1 {
+    color: gold;
+    text-shadow: 1px 2px 2px #3a3a3a
+}
 a {
     color: #9e9a75;
 }
-
-.quickLinks {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-main {
-
-    flex: 1;
-}
-
-
-.linkList {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.profile {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.box {
-    width: 150px;
-    height: 75px;
-    background-color: lightgrey;
-    border: 1px solid red;
-    align-content: center;
-    justify-content: center;
-}
-
-#chartdiv {
-    /*width: 80%;*/
-    width: auto;
-}
-
-#uaFlag {
-    float: left;
-    margin-left: 10px;
-    box-shadow: 2px 5px 5px #2a2a2a;
-}
-#dniproFlag {
-    float: left;
-    box-shadow: 2px 5px 5px #2a2a2a;
-}
-
-.banner {
-    text-align: center;
-    vert-align: middle;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    background-color: #41533b;
-    padding: 5px;
-}
-
- #su {
-     color: gold;
-     text-shadow: 1px 2px 2px #3a3a3a;
-     margin-bottom: 5px;
- }
-.banner2 {
-    /*margin-top: 10px;*/
-    padding: 10px;
-    background-color: lightgrey;
-}
-
-.banner2 > .quote {
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: justify;
-    border-left: 3px solid lightgrey;
-}
-
-.banner2 > .dniproFlag {
-    box-shadow: 2px 5px 5px #2a2a2a;
-    float: left;
-    margin-right: 10px;
-}
-
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #41533b;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 0 0 5px 0;
-    margin-top: 20px;
-}
-
 a:hover {
     color: mediumblue;
 }
-
+.quickLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 button {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -159,15 +81,86 @@ button {
     transition: all 0.3s;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
-
 button:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-.spann {
+/*.profile {*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*    margin-top: 5px;*/
+/*    flex-direction: row;*/
+/*    align-content: center;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*    border: 2px solid red;*/
+/*}*/
+
+#dniproFlag {
+    float: left;
+    box-shadow: 2px 5px 5px #2a2a2a;
+}
+footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    background-color: #41533b;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 0 0 5px 0;
+    /*margin-top: 20px;*/
+}
+.banner2 {
+    /*margin-top: 10px;*/
+    padding: 10px;
+    background-color: lightgrey;
+}
+.banner2 > .quote {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+    border-left: 3px solid lightgrey;
+}
+.banner2 > .dniproFlag {
+    box-shadow: 2px 5px 5px #2a2a2a;
+    float: left;
+    margin-right: 10px;
+}
+.linkList {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.copyright {
+    margin-top: 5px;
+    text-align: center;
+    font-size: small;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+}
+
+.tryzub {
+    display: flex;
+    /*width: 50px;*/
+    height: 60px;
+    position: sticky;
+    bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+.listView {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ian Umney</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
 
@@ -16,24 +17,38 @@
     </div>
 </header>
 <main>
-    <br>
-
-    <div class="quickLinks">
-        <h2>Quick Links</h2>
-        <span><button onclick="window.location.href='https://supportukrainenow.org';">Support Ukraine Now</button></span>
-        <span><button onclick="window.location.href='https://u24.gov.ua/';">Ukraine U24 Website</button></span>
-        <hr>
-        <span class="spann">
-            <img src="/src/tridentPatriots.jpeg" alt="Trident Patriots" width="100px" height="100px">
-            <button onclick="window.location.href='https://www.tiktok.com/@trident.patriots.ua';">Trident Patriot's Tiktok</button></span>
-
-        <span class="spann">
-            <img src="/src/defactoHumanity.jpeg" alt="Defacto Humanity" width="100px" height="100px">
-            <button onclick="window.location.href='https://www.tiktok.com/@defactohumanity';">Defacto Humanity's Tiktok</button>
-        </span>
+    <div class="ticker">
+        <div class="ticker-content" id="ticker-content">
+            <!-- News items will be inserted here by JavaScript -->
+        </div>
     </div>
 
+    <br>
+    <h2>Quick Links</h2>
+    <div class="quickLinks">
 
+        <span><button onclick="window.location.href='https://supportukrainenow.org';">Support Ukraine Now</button></span>
+        <span><button onclick="window.location.href='https://u24.gov.ua/';">Ukraine U24 Website</button></span>
+<!--        <hr>-->
+<!--        <span class="profile">-->
+<!--            <img src="/src/tridentPatriots.jpeg" alt="Trident Patriots" width="100px" height="100px">-->
+    </div>
+    <hr>
+    <br>
+    <h2>Tiktok Links</h2>
+    <br>
+    <span class="listView">
+        <button onclick="window.location.href='https://www.tiktok.com/@trident.patriots.ua';">Trident Patriot</button>
+        <button onclick="window.location.href='https://www.tiktok.com/@defactohumanity';">Defacto Humanity</button>
+        <button onclick="window.location.href='https://www.tiktok.com/@commontravelguy';">commontravelguy</button>
+        <button onclick="window.location.href='https://www.tiktok.com/@worldaidrunners';">worldaidrunners</button>
+        <br>
+        <u><b>This page is a work in progress.</b></u>
+        <br>
+    </span>
+
+
+    <div class="tryzub"><img src="/src/tryzub.png" alt="Tryzub"></div>
 </main>
 <footer>
     <div class="banner2">
@@ -54,5 +69,6 @@
     <div class="copyright">Copyright &copy 2025 Ian Umney. All rights reserved.</div>
 </footer>
 <script src="app.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 </html>
