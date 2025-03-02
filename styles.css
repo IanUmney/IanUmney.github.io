@@ -6,6 +6,10 @@
     /*max-width: 1000px;*/
 }
 
+main > h2 {
+    margin-left: 10px;
+    text-align: left !important;
+}
 
 header {
     display: flex;
@@ -63,9 +67,9 @@ a:hover {
 .quickLinks {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px
 }
 button {
     color: #090909;
@@ -85,14 +89,18 @@ button:active {
 
 /*.profile {*/
 /*    display: flex;*/
-/*    gap: 10px;*/
-/*    margin-top: 5px;*/
-/*    flex-direction: row;*/
-/*    align-content: center;*/
-/*    justify-content: center;*/
-/*    flex-wrap: wrap;*/
-/*    border: 2px solid red;*/
+/*    flex-direction: column;*/
+/*    column-count: 3;*/
+/*    height: 250px;*/
+/*    width: 90%;*/
+/*    margin: 20px;*/
+/*    align-items: start;*/
+/*    outline: 3px solid red;*/
+
 /*}*/
+
+
+
 
 #dniproFlag {
     float: left;
@@ -164,13 +172,71 @@ footer {
     /*border: 2px solid lawngreen;*/
 }
 
-
-
-
 .listView {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+.ppmask {
+    /*-webkit-mask-image: url("src/ukraineoutline.jpg");*/
+    /*mask-image: url("src/ukraineoutline.jpg");*/
+    /*mask-repeat: no-repeat;*/
+}
+
+.profile {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    /*outline: 1px solid red;*/
+    gap: 10px;
+    background-color: #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+
+}
+
+#profInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 5px;
+    flex: 1;
+}
+
+
+.profpic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 125px;
+    width: 100px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 2px solid white;
+    /*outline: 2px solid red;*/
+    overflow: hidden;
+    box-shadow: 0 0 10px #2a2a2a;
+    flex: 0 0 auto;
+}
+
+.profName {
+    /*outline: 2px solid red;*/
+}
+
+.fu {
+    margin: 10px;
+    text-shadow: 1px 1px 1px #3a3a3a;
+    color: red;
+    font-size: large;
+}
+
+#gif {
+    width: 100%;
+    /*margin: 10px;*/
 }
