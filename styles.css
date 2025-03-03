@@ -21,6 +21,12 @@ header {
 .bannerTop {
     text-align: left;
     vert-align: middle;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.bannerTop.h2 {
 }
 
 #uaFlag {
@@ -28,7 +34,17 @@ header {
     box-shadow: 2px 5px 5px #2a2a2a;
     height: auto;
     margin-right: 10px;
+    width: 25%;
 }
+
+#ukFlag {
+    float: right;
+    box-shadow: 2px 5px 5px #2a2a2a;
+    height: auto;
+    margin-right: 10px;
+    width: 25%;
+}
+
 #su {
     color: dodgerblue;
     text-shadow: 1px 2px 2px #3a3a3a;
@@ -92,7 +108,7 @@ a:hover {
 .profileScroll {
     height: 575px;
     overflow-y: scroll;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 button {
@@ -241,4 +257,25 @@ footer {
 .profLinks {
     margin-top: 5px;
     padding: 5px;
+}
+
+.portraits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+#hero {
+    width: 35vw;
+    box-shadow: 0 0 5px #2a2a2a;
+    margin: 20px;
+    height: 250px;
+}
+#hero2 {
+    width: 35vw;
+    box-shadow: 0 0 5px #2a2a2a;
+    margin: 20px;
+    height: 250px;
+
 }
