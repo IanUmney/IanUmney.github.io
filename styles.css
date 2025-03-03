@@ -106,7 +106,7 @@ a:hover {
 }
 
 .profileScroll {
-    height: 575px;
+    height: 600px;
     overflow-y: scroll;
     /*border: 1px solid red;*/
 }
@@ -267,15 +267,17 @@ footer {
 }
 
 #hero {
-    width: 35vw;
+    /*width: 35vw;*/
     box-shadow: 0 0 5px #2a2a2a;
     margin: 20px;
     height: 250px;
+    width: auto;
 }
 #hero2 {
-    width: 35vw;
+    /*width: 35vw;*/
     box-shadow: 0 0 5px #2a2a2a;
     margin: 20px;
     height: 250px;
+    width: auto;
 
 }
