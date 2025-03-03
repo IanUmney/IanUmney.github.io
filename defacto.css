@@ -93,7 +93,7 @@ main {
     position: fixed;
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 50px;
     width: 100%;
     bottom: 0;
     background-color: white;
