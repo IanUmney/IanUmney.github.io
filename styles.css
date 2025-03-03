@@ -201,5 +201,7 @@ footer {
 }
 
 #gif {
-    width: 100%;
+    width:80%;
+    border: 1px solid gold;
+    box-shadow: 0 0 5px #2a2a2a;
 }
