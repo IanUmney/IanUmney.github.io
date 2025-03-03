@@ -92,7 +92,7 @@ a:hover {
 .profileScroll {
     height: 575px;
     overflow-y: scroll;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 button {
