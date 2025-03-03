@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+main {
+    background-color: black;
+    color: darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.bannerImg > img {
+    height: 200px;
+}
+
+.profFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    /*border-radius: 50%;*/
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    top: 125px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 2px solid white;
+    /*outline: 2px solid red;*/
+    overflow: hidden;
+    box-shadow: 0 0 25px #c5c5c5;
+    flex: 0 0 auto;
+}
+
+
+.logoFloater {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    padding: 5px;
+    height: 70px;
+    box-shadow: #c5c5c5 -5px -5px 25px;
+}
+
+.pic {
+    /*border: 2px solid green;*/
+    width: 80px;
+}
+
+.pic > img {
+    width: 60px;
+    background-color: transparent;
+}
