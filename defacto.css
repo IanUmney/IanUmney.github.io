@@ -33,21 +33,21 @@ main {
 }
 
 .bannerImg > img {
-    display: flex;
-    height: 200px;
+    position: relative;
+    top: 0;
 }
 
 
 .profFrame {
     display: flex;
-    width: 130px;
-    height: 150px;
+    width: 240px;
+    height: 290px;
     /*border-radius: 50%;*/
     background-color: white;
     position: absolute;
     z-index: 1;
-    top:125px;
-    left: calc(50vw - 85px);
+    top:240px;
+    left: calc(37vw);
 
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
@@ -131,7 +131,7 @@ main {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top:40%;
+    top:80%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
