@@ -23,6 +23,7 @@ main {
     width: 100vw;
     overflow-x: hidden;
     /*text-align:center*/
+    align-items: center;
 }
 .bannerImg {
     display: flex;
