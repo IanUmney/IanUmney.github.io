@@ -59,11 +59,37 @@ a:hover {
 }
 .quickLinks {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px
+    margin: 10px;
+    /*border: 1px solid green;*/
+    /*height: 200px;*/
+    justify-content: center;
+    text-align: center;
+    overflow-x: scroll;
 }
+
+.ql {
+    /*border: 1px solid red;*/
+    width: 50%;
+}
+
+.now {
+
+}
+#sunBtn {
+}
+
+.united {
+
+}
+
+.profileScroll {
+    height: 575px;
+    overflow-y: scroll;
+    border: 1px solid red;
+}
+
 button {
     color: #090909;
     padding: 0.7em 1.7em;
