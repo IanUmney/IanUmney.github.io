@@ -66,12 +66,17 @@ a:hover {
     /*height: 200px;*/
     justify-content: center;
     text-align: center;
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
 }
 
 .ql {
     /*border: 1px solid red;*/
     width: 50%;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .now {
