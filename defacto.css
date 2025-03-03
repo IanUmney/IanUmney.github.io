@@ -1,37 +1,53 @@
 * {
     margin: 0;
     padding: 0;
+    max-width: 600px;
 }
 
+body {
+    overflow-x: hidden;
+}
 
-
+#rule {
+    width: 80%;
+    align-items: center;
+}
 
 main {
     background-color: black;
     color: darkgray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    /*text-align:center*/
+}
+.bannerImg {
+    display: flex;
+    justify-content: center;
+
+
 }
 
 .bannerImg > img {
+    display: flex;
     height: 200px;
 }
 
+
 .profFrame {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
+    width: 130px;
     height: 150px;
     /*border-radius: 50%;*/
     background-color: white;
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    top: 125px;
+    top:125px;
+    left: calc(50vw - 85px);
+
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
     border-top-right-radius: 10px;
@@ -41,11 +57,42 @@ main {
     overflow: hidden;
     box-shadow: 0 0 25px #c5c5c5;
     flex: 0 0 auto;
+    /*justify-content: center;*/
 }
 
+.bannerTop {
+}
+
+#headerLinks{
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30px;
+    margin-top: -5px;
+    padding: 10px;
+    gap: 160px;
+    align-items: center;
+    text-align: center;
+    /*background-color: purple;*/
+    box-shadow: #c5c5c5 0 0 25px;
+
+}
+
+#headerLinks a {
+    margin-left: 10px;
+    color: dimgrey;
+}
+
+#headerLinks a:hover {
+    color: dodgerblue;
+}
 
 .logoFloater {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
     width: 100%;
     bottom: 0;
     background-color: white;
@@ -54,12 +101,125 @@ main {
     box-shadow: #c5c5c5 -5px -5px 25px;
 }
 
-.pic {
-    /*border: 2px solid green;*/
-    width: 80px;
+#headerLinks > a {
+    color: white;
 }
 
 .pic > img {
-    width: 60px;
+    width: auto;
+    max-height: 60px;
     background-color: transparent;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 80vw;
+    position: relative;
+    margin: auto;
+    /*box-shadow: #c5c5c5 -5px -5px 25px;*/
+    border: 5px solid white;
+
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top:40%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: purple;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.8);
+
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: gold;
+    font-size: 15px;
+    text-shadow: #090909 1px 1px 1px;
+    padding: 0 12px;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    width: 100%;
+    text-align: justify;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.donateLinks {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 20px;
+    justify-content: space-evenly;
+
+}
+
+.donateLinks > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    ;
+}
+
+button {
+    color: #090909;
+    padding: 0.4em 0.3em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
