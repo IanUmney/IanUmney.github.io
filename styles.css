@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    /*max-width: 1000px;*/
 }
 
 main > h2 {
@@ -22,9 +21,6 @@ header {
 .bannerTop {
     text-align: left;
     vert-align: middle;
-}
-#su {
-    /*margin-left: 100px;*/
 }
 
 #uaFlag {
@@ -46,9 +42,6 @@ body
     min-height: 100vh;
     background-color: whitesmoke;
     text-align: center;
-}
-main {
-    /*flex: 1;*/
 }
 #rule {
     width: 70%;
@@ -87,21 +80,6 @@ button:active {
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-/*.profile {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    column-count: 3;*/
-/*    height: 250px;*/
-/*    width: 90%;*/
-/*    margin: 20px;*/
-/*    align-items: start;*/
-/*    outline: 3px solid red;*/
-
-/*}*/
-
-
-
-
 #dniproFlag {
     float: left;
     box-shadow: 2px 5px 5px #2a2a2a;
@@ -115,10 +93,8 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 0 0 5px 0;
-    /*margin-top: 20px;*/
 }
 .banner2 {
-    /*margin-top: 10px;*/
     padding: 10px;
     background-color: lightgrey;
 }
@@ -141,7 +117,6 @@ footer {
     justify-content: space-evenly;
 }
 .tiktokLinks {
-    /*border: 1px solid red;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,7 +144,6 @@ footer {
     bottom: 10px;
     margin: 20px;
     height: 70px;
-    /*border: 2px solid lawngreen;*/
 }
 
 .listView {
@@ -178,12 +152,6 @@ footer {
     gap: 40px;
     margin-left: 50px;
     margin-right: 50px;
-}
-
-.ppmask {
-    /*-webkit-mask-image: url("src/ukraineoutline.jpg");*/
-    /*mask-image: url("src/ukraineoutline.jpg");*/
-    /*mask-repeat: no-repeat;*/
 }
 
 .profile {
@@ -225,10 +193,6 @@ footer {
     flex: 0 0 auto;
 }
 
-.profName {
-    /*outline: 2px solid red;*/
-}
-
 .fu {
     margin: 10px;
     text-shadow: 1px 1px 1px #3a3a3a;
@@ -237,6 +201,7 @@ footer {
 }
 
 #gif {
-    width: 100%;
-    /*margin: 10px;*/
+    width:80%;
+    border: 1px solid gold;
+    box-shadow: 0 0 5px #2a2a2a;
 }
