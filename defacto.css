@@ -2,29 +2,35 @@
     margin: 0;
     padding: 0;
     color: darkgray;
-}
-
-body {
-    overflow-x: hidden;
+    user-select: none;
 }
 
 main {
     background-color: black;
-    height: 100vh;
-    overflow-x: hidden;
+    height: 100%;
     width: 100vw;
 }
 
-header {
+main > div {
+    overflow-x: hidden;
+}
+
+.twitterFeed {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.twitter-timeline {
+    width: 80vw;
+    justify-self: center;
 }
 
 .bannerTop {
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 310px; background-color: white;
     z-index: 0;
 }
@@ -68,7 +74,8 @@ header {
     align-content: center;
     align-items: center;
     width: 100%;
-    padding: 10px 20px 10px 10px;
+    padding: 10px 20px 10px 20px;
+    margin: 0 20px 0 10px;
     box-shadow: #c5c5c5 0 0 25px;
 
 }
@@ -80,6 +87,38 @@ header {
     color: dodgerblue;
 }
 
+.ribbon {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: white;
+    background-clip: text;
+
+}
+#ribbon {
+    width: 100%;
+    height: 100%;
+}
+
+
+#socialHeading h2 {
+    text-shadow: white 1px 1px 1px;
+    margin-bottom: 50px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.socials img {
+    width: 10vw;
+    height: auto;
+}
 
 .logoFloater {
     position: fixed;
@@ -90,7 +129,7 @@ header {
     bottom: 0;
     background-color: white;
     padding: 5px;
-    height: 70px;
+    height: 50px;
     box-shadow: #c5c5c5 -5px -5px 25px;
 }
 
@@ -100,8 +139,9 @@ header {
 
 .pic > img {
     width: auto;
-    max-height: 60px;
+    max-height: 50px;
     background-color: transparent;
+;
 }
 
 /* Slideshow container */
@@ -123,7 +163,7 @@ header {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top:60%;
+    top:110%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -151,12 +191,13 @@ header {
 /* Caption text */
 .text {
     color: gold;
+    text-wrap: wrap;
     font-size: 15px;
     text-shadow: #090909 1px 1px 1px;
-    padding: 0 12px;
+    margin: 5px;
     /*position: absolute;*/
     /*top: 50%;*/
-    width: 100%;
+    width: 98vw;
     text-align: justify;
 }
 
@@ -187,12 +228,23 @@ header {
     to {opacity: 1}
 }
 
+#links {
+    background-color: white;
+    height: 250px;
+    padding: 10px;
+}
+#links > h2 {
+    padding-top: 10px;
+    text-shadow: #090909 1px 1px 1px;
+}
+
+
 .donateLinks {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
-    gap: 20px;
     justify-content: space-evenly;
+    padding: 20px;
 
 }
 
@@ -201,8 +253,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 100%;
-    ;
+    height: 100%;
 }
 
 button {
