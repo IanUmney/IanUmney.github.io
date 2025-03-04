@@ -8,86 +8,78 @@ body {
     overflow-x: hidden;
 }
 
-#rule {
-    width: 80%;
-    align-items: center;
-}
-
 main {
     background-color: black;
-    color: darkgray;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
     height: 100vh;
-    width: 100vw;
     overflow-x: hidden;
-    /*text-align:center*/
+    width: 100vw;
+}
+
+header {
+}
+
+.bannerTop {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
-}
-.bannerImg {
-    display: flex;
-    justify-content: center;
-
-
+    overflow-x: hidden;
+    height: 310px; background-color: white;
+    z-index: 0;
 }
 
-.bannerImg > img {
-    display: flex;
-    height: 200px;
-}
+/*.bannerImg {*/
+/*    height: 100%;*/
+/*}*/
 
+.bannerImg > img{
+    position: relative;
+    top: -80px;
+}
 
 .profFrame {
     display: flex;
-    width: 130px;
-    height: 150px;
-    /*border-radius: 50%;*/
+    width: 175px;
+    height: 200px;
     background-color: white;
-    position: absolute;
-    z-index: 1;
-    top:125px;
-    left: calc(50vw - 85px);
-
+    z-index: 2;
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border: 2px solid white;
-    /*outline: 2px solid red;*/
     overflow: hidden;
     box-shadow: 0 0 25px #c5c5c5;
     flex: 0 0 auto;
-    /*justify-content: center;*/
+    top: -253px;
+    left: -20px;
+    position: relative;
 }
 
-.bannerTop {
-}
 
 #headerLinks{
-    z-index: 0;
+    position: relative;
+    /*bottom: 0;*/
+    top: -290px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    height: 30px;
-    margin-top: -5px;
-    padding: 10px;
-    gap: 160px;
+    justify-content: space-between;
+    align-content: center;
     align-items: center;
-    text-align: center;
-    /*background-color: purple;*/
+    width: 100%;
+    padding: 10px 20px 10px 10px;
     box-shadow: #c5c5c5 0 0 25px;
 
 }
-
 #headerLinks a {
     margin-left: 10px;
     color: dimgrey;
 }
-
 #headerLinks a:hover {
     color: dodgerblue;
 }
+
 
 .logoFloater {
     position: fixed;
@@ -118,20 +110,20 @@ main {
     position: relative;
     margin: auto;
     /*box-shadow: #c5c5c5 -5px -5px 25px;*/
-    border: 5px solid white;
 
 }
 
 /* Hide the images by default */
 .mySlides {
     display: none;
+    position: relative;
 }
 
 /* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top:40%;
+    top:60%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
