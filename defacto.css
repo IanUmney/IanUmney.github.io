@@ -4,11 +4,14 @@
     color: darkgray;
     user-select: none;
 }
+h2 {
+    font-size: 2rem;
+}
 
-main {
+body {
     background-color: black;
-    height: 100%;
-    width: 100vw;
+    /*height: 100%;*/
+    /*width: 100vw;*/
 }
 
 main > div {
@@ -23,6 +26,8 @@ main > div {
 .twitter-timeline {
     width: 80vw;
     justify-self: center;
+    box-shadow: 2px 2px 4px #000;
+    border-radius: 20px;
 }
 
 .bannerTop {
@@ -59,20 +64,26 @@ main > div {
     box-shadow: 0 0 25px #c5c5c5;
     flex: 0 0 auto;
     top: -253px;
-    left: -20px;
+    left: 200px;
     position: relative;
 }
 
+#xabout {
+    margin-left: 25px;
+    display: flex;
+    gap: 25px;
+}
+
+#paypalalkatraz {
+    margin-left: 100px;
+}
 
 #headerLinks{
     position: relative;
-    /*bottom: 0;*/
     top: -290px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
+    /*display: flex;*/
+    /*flex-direction: row;*/
     width: 100%;
     padding: 10px 20px 10px 20px;
     margin: 0 20px 0 10px;
@@ -118,6 +129,8 @@ main > div {
 .socials img {
     width: 10vw;
     height: auto;
+    border: 3px solid white;
+    border-radius: 30%;
 }
 
 .logoFloater {
@@ -163,7 +176,7 @@ main > div {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top:110%;
+    top: 95%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -171,16 +184,19 @@ main > div {
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 5px 5px 5px 5px;
     user-select: none;
-    background-color: rgba(0,0,0,0.8);
-
+    background-color: rgba(255,255,255,0.8);
+}
+.prev {
+    left: 22px;
 }
 
 /* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
+    margin-right: 22px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -232,12 +248,18 @@ main > div {
     background-color: white;
     height: 250px;
     padding: 10px;
+    border-bottom: 2px solid black;
 }
 #links > h2 {
     padding-top: 10px;
     text-shadow: #090909 1px 1px 1px;
 }
 
+#twitterDiv {
+    background-color: white;
+    padding: 10px;
+    border: 3px solid black;
+}
 
 .donateLinks {
     display: flex;
