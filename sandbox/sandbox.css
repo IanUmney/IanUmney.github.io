@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    margin: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: gold;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.container > div {
+    background-color: lightgray;
+    border: 1px solid darkgray;
+    align-content: center;
+    height: 30px;
+    text-transform: uppercase;
+}
+
+.headerContainer {
+    grid-column: 1/4;
+    border: 1px solid red;
+}
+
+.sideSocialLinks {
+    grid-row: 2/ 10;
+    width: 0.5fr;
+    /*height: 100%;*/
+    text-orientation: sideways;
+}
+
+.bodyContainer {
+    grid-column: 1/4;
+}
+
+.footerContainer {
+    grid-column: 1/4;
+}
+
+#mainCont {
+    display: grid;
+}
