@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.donorCard {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    width: 100vw;
+    justify-content: center;
+    background-color: beige;
+
+}
+
+.donorCard > div {
+    border: 1px solid red;
+    width: 100%;
+}
