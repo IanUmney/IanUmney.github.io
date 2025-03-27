@@ -2,3 +2,54 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+    height: 100px;
+}
+
+main {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    width: 100vw;
+    height: 100vh;
+    margin: 5px;
+}
+
+.card {
+    background-color: whitesmoke;
+    height: auto;
+    box-shadow: -1px 1px 5px grey;
+    border: 1px solid darkolivegreen;
+    display: grid;
+    align-items: start;
+    text-align: left;
+    padding: 10px;
+    column-gap: 10px;
+    grid-template:
+"job_title job_role job_role"
+"company_name job_role job_role "
+"from_to  keywords keywords";
+
+}
+
+
+#job_title {
+    grid-area: job_title;
+}
+
+#company_name {
+    grid-area: company_name;
+}
+
+#from_to {
+    grid-area: from_to;
+}
+
+#job_role {
+    grid-area: job_role;
+}
+
+#keywords {
+    grid-area: keywords;
+    text-align: center;
+}
