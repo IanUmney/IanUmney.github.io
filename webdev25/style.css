@@ -1,4 +1,130 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
+
+
+.license {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("/src/driving-license-blank.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 243px;
+    height: 141px;
+    background-color: grey;
+    font: .5rem bold;
+    scale: 1.25;
+    border-radius: 10px;
+    top: 220px;
+    left: 265px;
+    transform: rotate(-90deg);
+
+}
+
+.license:hover {
+    cursor: pointer;
+    /* transform: rotate(-90deg) scale(1.01); */
+    border: .5px solid white;
+    animation: move 1.5s forwards;
+
+    
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(-10px);
+        transform: rotate(-90deg);
+    }
+    50% {
+        transform: translateX(-170px);
+    }
+    100% {
+        z-index: 2;
+        transform: translateX(-80px);
+
+    }
+}
+
+.license div {
+    left: 69px;
+    position: relative;
+;
+}
+
+#surname {
+    top: 2.28rem;
+}
+
+#first-name {
+    top: 1rem;
+}
+
+#dob {
+    top: .3rem;
+}
+
+#valid-from {
+    top: -.89rem;
+}
+
+#valid-to {
+    top: -2.15rem;
+
+}
+
+#license-number {
+    top: -3.39rem;
+}
+
+#address {
+    top: -4.4rem;
+}
+
+#license-photo {
+    width: 60px;
+    height: 50px;
+    background-image: url("/src/zelensky-photo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    left: .3rem;
+    top: 2rem;
+    position: absolute;
+    
+}
+
+#fake-text {
+    position: absolute;
+    bottom: -.5rem;
+    left: .75rem;
+    transform: rotate(-.2deg);
+}
+
+#wallet {
+    background-image: url("/src/empty-wallet.png");
+    width: 500px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#right-bottom {
+    background-image: url("/src/wallet-right-bottom.png");
+    width: 4rem;
+    height: 11.65rem;;
+    background-repeat: no-repeat;
+    background-position: center;
+    scale: 1.85;
+    background-size: cover;
+    position: absolute;
+    /* transform: rotate(90deg); */
+    top: 14.1rem;
+    left: 27rem;
+}
+
