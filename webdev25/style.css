@@ -3,6 +3,19 @@
     padding: 10px;
 }
 
+#wallet {
+    background-image: url("/src/empty-wallet.png");
+    width: 100%;
+    min-width: 300px;
+    max-width: 300px;
+    aspect-ratio: 1.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* border: solid red 2px; */
+
+}
+
 
 .license {
     position: relative;
@@ -15,23 +28,12 @@
     background-position: center;
     width: 243px;
     height: 141px;
-    background-color: grey;
     font: .5rem bold;
-    scale: 1.25;
+    scale: .75;
     border-radius: 10px;
-    top: 220px;
-    left: 265px;
+    top: 7.3rem;
+    left: 6.4rem;
     transform: rotate(-90deg);
-
-}
-
-.license:hover {
-    cursor: pointer;
-    /* transform: rotate(-90deg) scale(1.01); */
-    border: .5px solid white;
-    animation: move 1.5s forwards;
-
-    
 }
 
 @keyframes move {
@@ -48,6 +50,30 @@
 
     }
 }
+
+.license:hover {
+    cursor: pointer;
+    /* transform: rotate(-90deg) scale(1.01); */
+    border: .5px solid white;
+    animation: move 1s forwards;
+}
+
+#right-bottom {
+    background-image: url("/src/wallet-right-bottom.png");
+    width: 4rem;
+    height: 13.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: -5.05rem;
+    right: -14rem;
+
+
+}
+
+
+
 
 .license div {
     left: 69px;
@@ -105,26 +131,18 @@
     transform: rotate(-.2deg);
 }
 
-#wallet {
-    background-image: url("/src/empty-wallet.png");
-    width: 500px;
-    height: 600px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
 
-#right-bottom {
-    background-image: url("/src/wallet-right-bottom.png");
-    width: 4rem;
-    height: 11.65rem;;
-    background-repeat: no-repeat;
-    background-position: center;
-    scale: 1.85;
-    background-size: cover;
+
+
+
+#bank-card {
+    width: 243px;
+    height: 141px;
+    background-color: red;
     position: absolute;
-    /* transform: rotate(90deg); */
-    top: 14.1rem;
-    left: 27rem;
+    z-index: 1;
+    transform: rotate(-90deg);
+    scale: .75;
+    top: 10.5rem;
+    left: -1.75rem;
 }
-
