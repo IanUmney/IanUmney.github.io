@@ -3,10 +3,64 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 header {
     width: 100vw;
-    height: 5rem;
-    border: 2px solid red;
+    display: flex;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-content: center;
+    background-color: #e8e8e8;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+main #brief {
+    padding: 1rem 15vw;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#db-heading, #valid-heading {
+    font-size: 1.5rem;;
+}
+
+.info-card-container {
+    margin: 10px, 0, 10px, 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10vw;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-evenly;
+    text-align: center;
+    color: grey;
+    text-shadow: 2px 0 0 #000899;
+}
+
+.info-card-container > div > img, 
+.info-card-container > div > p {
+    width: 30vw;
+    left: -10px;
+    text-justify: center;
+    max-width: 250px;
 }
 
 #table-container {
@@ -33,23 +87,18 @@ th, td {
     text-align: left; /* Align text to the left */
 }
 
-body {
+#generate-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-content: center;
-    height: 100vh;
-    background-color: #e8e8e8;
-    overflow-x: hidden;
-}
-
-#input-container {
-    display: flex;
+    align-items: center;
     width: 100%;
     height: auto;
-    justify-content: center;
+    /* margin-top: 5rem; */
 }
 
+#generate-container form input {
+    margin-right: 10px;
+}
 
 #generate-button {
     width: 15rem;
@@ -77,14 +126,13 @@ body {
     justify-content: center;
     align-items: flex-start;
     height: auto;
-
+    padding: 1vw;
 }
 
 #wallet {
     position: relative;
     background: url("/src/empty-wallet.png") center / contain no-repeat;
     width: 90%;
-
 }
 
 .card {
@@ -99,16 +147,16 @@ body {
 .license {
     background: url("/src/driving-license-blank.png") center / cover no-repeat;
     font: .5rem bold;
-    transform: rotate(-90deg);
-    inset: 4.5rem 0 0 5.5rem;
+
+    inset: 12rem 0 0 2rem;
 }
 
-#bank-card {
+.bank-card {
     position: relative;
     background-color: red;
     z-index: 1;
-    transform: rotate(-90deg);
-    inset: -5rem 0 0 -5rem;
+
+    inset: -12rem 0 0 -2rem;
 }
 
 #bank-card div {
@@ -148,8 +196,19 @@ body {
     position: absolute;
     top: 3.26rem;
     left: 14.5rem;
+}
 
-
+#left-bottom {
+    background-image: url("/src/left-bottom.png");
+    width: 160px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 7.5rem;
+    /* left: 14.5rem; */
+    z-index: 2;
 }
 
 #bank-card {
@@ -159,8 +218,8 @@ body {
     position: relative;
     z-index: 1;
     transform: rotate(-90deg);
-    left: -4.9rem;
-    top: -5rem
+    /* left: -4.9rem; */
+    /* top: -5rem */
 }
 
 #bank-card div {
@@ -226,6 +285,13 @@ body {
 
 
 
-
+footer {
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    padding: .5rem;
+    background-color: grey;
+    color: seashell;
+}
 
 
