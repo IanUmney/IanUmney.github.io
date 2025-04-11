@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-content: center;
+    background-color: #e8e8e8;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #2a2a2a;
+    color: #e8e8e8;
+}
+
+main {
+    flex: 1;
+}
+
+main #brief {
+    padding: 1rem 15vw;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#db-heading, #valid-heading {
+    font-size: 1.5rem;;
+}
+
+.info-card-container {
+    margin: 10px, 0, 10px, 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10vw;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-evenly;
+    text-align: center;
+    color: grey;
+    text-shadow: 2px 0 0 #000899;
+}
+
+.info-card-container > div > img, 
+.info-card-container > div > p {
+    width: 30vw;
+    left: -10px;
+    text-justify: center;
+    max-width: 250px;
+}
+
+#table-container {
+    padding: 5px;
+    height: 300px;
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport width */
+    overflow-y: auto; /* Add horizontal scrolling if needed */
+    max-height: 300px;
+    box-shadow: inset 0 0 5px #2a2a2a; /* Optional: Add shadow for better visibility */
+    justify-content: center;
+}
+
+table {
+    width: 80%; /* Make the table take up the full width of the container */
+    border-collapse: collapse; /* Remove gaps between table borders */
+}
+
+th, td {
+    /* word-wrap: break-word; Allow long words to break into new lines */
+    /* overflow-wrap: break-word; Modern alternative for word wrapping */
+    white-space: normal; /* Allow text to wrap instead of staying on one line */
+    padding: 10px; /* Add padding for better readability */
+    border: 1px solid #ccc; /* Optional: Add borders for clarity */
+    text-align: left; /* Align text to the left */
+}
+
+#generate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    /* margin-top: 5rem; */
+}
+
+#generate-container form input {
+    margin-right: 10px;
+}
+
+#generate-button {
+    width: 15rem;
+    padding: 0.625rem; /* 10px to 0.625rem */
+    background-color: #e8e8e8;
+    border-radius: 1.5625rem; /* 25px to 1.5625rem */
+    border: solid 0.0625rem #2a2a2a; /* 1px to 0.0625rem */
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+#generate-button:hover {
+    background-color: blue;
+}
+
+#interactive-identification {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#id-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    padding: 1vw;
+}
+
+#wallet {
+    position: relative;
+    background: url("/src/empty-wallet.png") center / contain no-repeat;
+    width: 90%;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    scale: .63;
+    border-radius: 10px;
+    aspect-ratio: 243/141;
+}
+
+.license {
+    background: url("/src/driving-license-blank.png") center / cover no-repeat;
+    font: .5rem bold;
+
+    inset: 12rem 0 0 2rem;
+}
+
+.bank-card {
+    position: relative;
+    background-color: red;
+    z-index: 1;
+
+    inset: -12rem 0 0 -2rem;
+}
+
+#bank-card div {
+    position: absolute;
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateX(-10px);
+        transform: rotate(-90deg);
+    }
+    50% {
+        transform: translateX(-170px);
+    }
+    100% {
+        z-index: 3;
+        transform: translateX(-80px);
+
+    }
+}
+
+/* .license:hover {
+    cursor: pointer;
+    /* transform: rotate(-90deg) scale(1.01); 
+    border: .5px solid white;
+    animation: move 1s forwards;
+} */
+
+#right-bottom {
+    background-image: url("/src/wallet-right-bottom.png");
+    width: 4rem;
+    height: 13.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 3.26rem;
+    left: 14.5rem;
+}
+
+#left-bottom {
+    background-image: url("/src/left-bottom.png");
+    width: 160px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 7.5rem;
+    /* left: 14.5rem; */
+    z-index: 2;
+}
+
+#bank-card {
+    width: 243px;
+    height: 141px;
+    background-color: red;
+    position: relative;
+    z-index: 1;
+    transform: rotate(-90deg);
+    /* left: -4.9rem; */
+    /* top: -5rem */
+}
+
+#bank-card div {
+    position: absolute;
+}
+
+
+.license div {
+    left: 5rem;;
+    position: absolute;
+
+}
+
+#surname {
+    top: .95rem;
+}
+
+#first-name {
+    top: 1.5rem;
+}
+
+#dob {
+    top: 2.65rem;
+}
+
+#valid-from {
+    top: 3.25rem;
+}
+
+#valid-to {
+    top: 3.8rem;
+
+}
+
+#license-number {
+    top: 4.4rem;
+}
+
+#address {
+    top: 5.17rem;
+}
+
+#license-photo {
+    width: 60px;
+    height: 50px;
+    background-image: url("/src/zelensky-photo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    left: .3rem;
+    top: 2rem;
+    position: absolute;
+    
+}
+
+#fake-text {
+    position: absolute;
+    bottom: -.5rem;
+    left: .75rem;
+    transform: rotate(-.2deg);
+}
+
+
+
+footer {
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    padding: .5rem;
+    background-color: grey;
+    color: seashell;
+    transition: background-color 0.3s, color 0.3s;
+}
+
