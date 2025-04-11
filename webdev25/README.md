@@ -25,3 +25,7 @@ A project violating any of these requirements will <b>FAIL</b>
   - Maintain clear separation between code written by you and code from external sources (e.g. libraries or tutorials). Attribute any code from external sources to its source via comments above the code and (for larger dependencies) in the README.
 - Deployment: 
   - Deploy the final version of your code to a hosting platform such as GitHub Pages.
+
+  ## Credits
+  ```<a href="https://iconscout.com/lottie-animations/flowchart-analysis" class="text-underline font-size-sm" target="_blank">Flowchart Analysis</a> by <a href="https://iconscout.com/contributors/bhaskarkuniyal" class="text-underline font-size-sm">Skills Iland</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>```
+  
