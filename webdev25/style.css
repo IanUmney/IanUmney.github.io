@@ -57,8 +57,6 @@ main #brief {
     grid-template-rows: repeat(2, 1fr);
     justify-content: space-evenly;
     text-align: center;
-    color: grey;
-    text-shadow: 2px 0 0 #000899;
 }
 
 .info-card-container > div > img, 
@@ -139,6 +137,8 @@ th, td {
     position: relative;
     background: url("/src/empty-wallet.png") center / contain no-repeat;
     width: 90%;
+
+
 }
 
 .card {
@@ -301,3 +301,14 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
+#technologies {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#technologies  img {
+    height: 2rem;
+
+
+}
