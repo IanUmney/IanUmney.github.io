@@ -25,7 +25,7 @@ window.onload = function () {
 
     if (!visited) {
         // Show the alert if the cookie doesn't exist
-        alert("Welcome to Ian Umney's website! This page is under construction.");
+        alert("Welcome to the site. It's fully coded and deployed by yours truly so enjoy :) This site uses a cookie ONLY to stop this alert coming up each reload. It expires after 7 days. setCookie('visited', 'true', 7)");
 
         // Set the "visited" cookie to prevent future alerts
         setCookie("visited", "true", 7); // Cookie expires in 7 days
