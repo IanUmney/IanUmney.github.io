@@ -109,6 +109,17 @@ header {
     padding: 10px;
 }
 
+#navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+#navbar a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #007BFF; /* Example color */
+}
+
 footer {
     position: relative;
     flex-grow: 0;
