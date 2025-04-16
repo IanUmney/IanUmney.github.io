@@ -30,4 +30,21 @@ window.onload = function () {
         // Set the "visited" cookie to prevent future alerts
         setCookie("visited", "true", 7); // Cookie expires in 7 days
     }
+
+    
 };
+
+// Function to delete a cookie
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert(`Cookie "${name}" has been deleted.`);
+}
+const deleteButton = document.getElementById("remove-cookie-btn");
+    if (deleteButton) {
+        deleteButton.addEventListener("click", function () {
+            deleteCookie("visited");
+        });
+    }
+
+
+
