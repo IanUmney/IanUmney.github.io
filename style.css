@@ -193,4 +193,20 @@ footer {
     padding: 0 2px;
 }
 
+#cookie-table-div {
+    width: 100%;
+
+}
+
+#cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cookie-table th,
+#cookie-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
 
