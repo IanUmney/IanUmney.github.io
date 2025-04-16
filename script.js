@@ -19,32 +19,63 @@ function getCookie(name) {
     return null;
 }
 
-// Check if the "visited" cookie exists
-window.onload = function () {
-    const visited = getCookie("visited");
+// Function to populate the cookie table
+function populateCookieTable() {
+    const cookieTableBody = document.querySelector("#cookie-table tbody");
+    if (cookieTableBody) {
+        // Clear existing rows
+        cookieTableBody.innerHTML = "";
 
-    if (!visited) {
-        // Show the alert if the cookie doesn't exist
-        alert("Welcome to the site. It's fully coded and deployed by yours truly so enjoy :) This site uses a cookie ONLY to stop this alert coming up each reload. It expires after 7 days. setCookie('visited', 'true', 7)");
+        // Get cookies and populate rows
+        const cookies = document.cookie.split("; ");
+        cookies.forEach(cookie => {
+            const [name, value] = cookie.split("=");
+            const row = document.createElement("tr");
 
-        // Set the "visited" cookie to prevent future alerts
-        setCookie("visited", "true", 7); // Cookie expires in 7 days
+            const nameCell = document.createElement("td");
+            nameCell.textContent = name || "N/A";
+            row.appendChild(nameCell);
+
+            const valueCell = document.createElement("td");
+            valueCell.textContent = value || "N/A";
+            row.appendChild(valueCell);
+
+            const expiryCell = document.createElement("td");
+            expiryCell.textContent = "7 days"; // Expiry is not accessible via `document.cookie`
+            row.appendChild(expiryCell);
+
+            cookieTableBody.appendChild(row);
+        });
     }
-
-    
-};
+}
 
 // Function to delete a cookie
 function deleteCookie(name) {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    alert(`Cookie "${name}" has been deleted.`);
+    alert(`The cookie "${name}" has been deleted.`);
+    populateCookieTable(); // Refresh the table after deleting the cookie
 }
-const deleteButton = document.getElementById("remove-cookie-btn");
+
+// Attach event listener to the delete button
+window.onload = function () {
+    const visited = getCookie("fuckputin");
+
+    if (!visited) {
+        // Show the alert if the cookie doesn't exist
+        alert("Welcome to the site. It's fully coded and deployed by yours truly so things may seem off :) This site uses a cookie as described in the Cookie Policy.");
+        setCookie("fuckputin", "true", 7); // Cookie expires in 7 days
+    }
+
+    const deleteButton = document.getElementById("remove-cookie-btn");
     if (deleteButton) {
         deleteButton.addEventListener("click", function () {
-            deleteCookie("visited");
+            deleteCookie("fuckputin");
         });
     }
+
+    // Populate the table on page load
+    populateCookieTable();
+};
 
 
 
