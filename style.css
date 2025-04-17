@@ -20,7 +20,15 @@
     }
 }
 
-
+#about-news-list {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    ul li {
+        margin: 10px;
+        text-indent: 20px;
+    }
+}
 
 .hr {
     width:75%;
@@ -83,21 +91,23 @@ main {
 
 #news-div {
     min-width: 288px;
-    max-width: 500px;
+    max-width: 50%;
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 10px;
+
 }
-#news-div img {
-    width: 100%;
+.news-image {
+    width: 50%;
     height: auto;
+    border-radius: 10px 10px 0 0;
 }
 
 #news-div p {
     padding: 0 10px;
 }
 .news-link {
-    margin-bottom: 5px;;
+    margin-bottom: 5px;
 }
 
 
