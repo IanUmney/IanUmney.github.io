@@ -39,4 +39,4 @@ async function fetchCommits() {
 }
 
 // Call the function on page load
-window.onload = fetchCommits;
+window.onload = fetchCommits; 
