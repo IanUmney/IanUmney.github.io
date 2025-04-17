@@ -3,7 +3,7 @@ async function fetchCommits() {
     console.log("Fetching commits...");
     const owner = "IanUmney";
     const repo = "IanUmney.github.io";
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/events`;
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
 
     try {
         const response = await fetch(apiUrl);
@@ -11,23 +11,25 @@ async function fetchCommits() {
             throw new Error(`GitHub API error: ${response.status}`);
         }
 
-        const events = await response.json();
+        const commits = await response.json();
         const commitList = document.getElementById("commit-list");
 
-        // Filter only "PushEvent" events (which contain commits)
-        const pushEvents = events.filter(event => event.type === "PushEvent");
+        commits.forEach(commit => {
+            const listItem = document.createElement("li");
 
-        // Limit to the 5 most recent push events
-        pushEvents.slice(0, 5).forEach(event => {
-            event.payload.commits.forEach(commit => {
-                const listItem = document.createElement("li");
-                listItem.innerHTML = `
-                    <strong>${commit.message}</strong>
-                    <br>
-                    <small>On ${new Date(event.created_at).toLocaleDateString()}</small>
-                `;
-                commitList.appendChild(listItem);
-            });
+
+            const commitDate = new Date(commit.commit.author.date);
+            const day = String(commitDate.getDate()).padStart(2, '0');
+            const month = String(commitDate.getMonth() + 1).padStart(2, '0');
+            const year = commitDate.getFullYear();
+            const formattedDate = `${day}/${month}/${year}`;
+
+            listItem.innerHTML = `
+                <strong>${commit.commit.message}</strong>
+                <br>
+                <small>By ${commit.commit.author.name} on ${formattedDate}</small>
+            `;
+            commitList.appendChild(listItem);
         });
     } catch (error) {
         console.error("Error fetching commits:", error);

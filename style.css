@@ -32,12 +32,17 @@ body {
 
 }
 
+body main > h1 {
+    align-self: flex-start;
+}
+
 main {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     text-align: justify;
     width: 80%;
-
-
+    align-items: center;
 }
 
 #main-content {
@@ -141,7 +146,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 20px;
     background-color: #f1f1f1;
     width: 100%;
@@ -241,4 +246,12 @@ footer {
 
 #commit-list li:last-child {
     border-bottom: none;
+}
+
+#changelog {
+    position: relative;
+    max-height: 200px;
+    max-width: 400px;
+    overflow-y: auto;
+    margin-top: auto;
 }
