@@ -40,10 +40,6 @@ main {
 
 }
 
-#home-main-about {
-
-}
-
 #main-content {
     display: flex;
     flex-direction: column;
@@ -219,3 +215,30 @@ footer {
     text-align: left;
 }
 
+#changelog {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#changelog h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#commit-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#commit-list li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+#commit-list li:last-child {
+    border-bottom: none;
+}
