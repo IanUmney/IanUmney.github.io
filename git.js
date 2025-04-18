@@ -25,6 +25,7 @@ async function fetchCommits() {
             const formattedDate = `${day}/${month}/${year}`;
 
             listItem.innerHTML = `
+                <img src="https://raw.githubusercontent.com/primer/octicons/863af9507f27e8e99f13237873c0a1897eaf5640/icons/git-commit-24.svg">
                 <strong>${commit.commit.message}</strong>
                 <br>
                 <small>By ${commit.commit.author.name} on ${formattedDate}</small>
