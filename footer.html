@@ -21,7 +21,7 @@
                 <img src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/CSS3_logo_and_wordmark.png ">
                 <img src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/HTML5_Logo_64.png  ">
                 <img src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/javascript-icon.svg    ">
-                <div class="tech-used">
+                <div class="tech-used, tech-used-2">
                     <img src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/cloudflare.png">
                 <img src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/google_analytics-ar21.svg   ">
 
@@ -41,8 +41,14 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        min-width: 270px;
+        /* min-width: 270px; */
         z-index: 3;
+    }
+    .tech-used-2 {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
     }
     footer {
     position: relative;
@@ -59,8 +65,9 @@
 }
 
 footer img {
-    max-width: 10rem;
+    /* max-width: 10rem; */
     height: 32px;
+    min-width: auto;
 }
 
 #footer-menu {
@@ -110,6 +117,9 @@ footer img {
 #footer-cookie-info, #footer-contact {
     font-size: 0.9rem;
     line-height: 1.5;
+}
+#footer-cookie-info {
+    flex: 2;
 }
 
 #footer-contact li a {
