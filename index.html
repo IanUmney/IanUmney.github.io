@@ -14,60 +14,40 @@
     <title>Ian Umney | Home</title>
 </head>
 <body>
+    <!--Load the cookie script-->
     <script src="cookie.js"></script>
+
     <header>
-        <div id="navbar">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="/webdev25/">WebDev25</a></li>
-            <li><a href="contact.html">Contact</a></li>        
-        </div>
+        <!--This header will load automatically-->
     </header>
 
     <main>
-    <p><h1>Home</h1></p>
-    <div style="height:100px;display:flex;text-align: center;align-items: center;justify-items: center;">
-        It sucks this isn't ready yet but I am working on it. I promise!
-    </div>
+        <p><h1>Home</h1></p>
+        <div style="height:100px;display:flex;text-align: center;align-items: center;justify-items: center;">
+            It sucks this isn't ready yet but I am working on it. I promise!
+        </div>
 
-    <section id="changelog">
-        <h2>Recent Updates</h2>
-        <ul id="commit-list">
-            <!-- Commit messages will be dynamically added here -->
-        </ul>
-    </section>
+        <section id="changelog">
+            <h2>Recent Updates</h2>
+            <div>
+
+            </div>
+            <img src="https://raw.githubusercontent.com/primer/octicons/863af9507f27e8e99f13237873c0a1897eaf5640/icons/git-commit-24.svg">
+            <ul id="commit-list">
+                <!-- Commit messages will be dynamically added here -->
+            </ul>
+        </section>
 
     </main>
     
 
     
     <footer>
-        
-        <div id="footer-columns">
-            <div id="footer-links">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>        
-                    <li><a href="/webdev25/">WebDev25</a></li>
-                </ul>
-            </div>
-            <div id="footer-cookie-info">
-                <p>&copy; <small>2025 Ian Umney. All rights reserved</small>.</p>
-                <a href="/cookie-policy.html">Cookie Policy</a>
-            </div>
-            <div id="footer-contact">
-                <h3>Contact</h3>
-                <p id="footer-email"><a href="mailto:contact@ianumney.me?subject=Webpage%20contact">Email Me</a></p>
-            </div>
-        </div>
+        <!-- This footer will load automatically-->
     </footer>
 
+    <script src="script.js" defer></script>
 
-    
-
-    <script src="script.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -85,8 +65,7 @@
                 "name": "UmneyTech",
             }
         }
-        </script>
-        <!-- This git.js for for pulling recent events from my GitHub repository. !-->
-        <script src="git.js"></script> 
+    </script>
+
 </body>
 </html>
