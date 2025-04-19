@@ -22,8 +22,8 @@ main {
     flex-direction: column;
     flex-grow: 1;
     text-align: justify;
-    border-left: 0.5px solid grey;
-    border-right: 0.5px solid grey;
+    /* border-left: 0.5px solid grey;
+    border-right: 0.5px solid grey; */
     width: 80%;
 }
 
