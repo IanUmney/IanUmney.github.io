@@ -75,8 +75,8 @@ async function fetchCommits() {
 }
 
 // Call the functions on page load
-window.onload = async function () {
-    loadHeader();
-    loadFooter();
-    fetchCommits();
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadHeader();
+    await loadFooter();
+});
 };

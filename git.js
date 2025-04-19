@@ -39,5 +39,6 @@ async function fetchCommits() {
     }
 }
 
-// Call the function on page load
-window.onload = fetchCommits; 
+document.addEventListener("DOMContentLoaded", async () => {
+    await fetchCommits();
+});
