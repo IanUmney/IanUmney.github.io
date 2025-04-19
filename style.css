@@ -12,11 +12,6 @@
     p {
         font-size: 1rem;
     }
-
-    #changelog {
-        min-width: 500px;
-        align-self: flex-start;
-    }
 }
 
 #about-news-list {
@@ -169,13 +164,7 @@ header {
     text-align: left;
 }
 
-#changelog {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+
 
 #changelog h2 {
     font-size: 1.5rem;
@@ -185,6 +174,7 @@ header {
 #commit-list {
     list-style-type: none;
     padding: 0;
+    width: 50%;
 }
 
 #commit-list li {
@@ -200,9 +190,12 @@ header {
 #changelog {
     position: relative;
     max-height: 200px;
-    width: auto;
     overflow-y: auto;
-    margin-top: auto;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
 
 .second-header {
