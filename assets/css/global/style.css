@@ -129,6 +129,7 @@ main {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
+    width: 45%;
 }
 
 #changelog h2 {
@@ -139,7 +140,7 @@ main {
 #commit-list {
     list-style-type: none;
     padding: 0;
-    width: 50%;
+    width: 100%;
 }
 
 #commit-list li {
