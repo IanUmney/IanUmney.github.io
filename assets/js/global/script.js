@@ -4,7 +4,7 @@ async function loadHeader() {
     const headerElement = document.querySelector("header");
     if (headerElement) {
         try {
-            const response = await fetch("/header.html");
+            const response = await fetch("/components/header.html");
             if (!response.ok) {
                 throw new Error(`Failed to load header: ${response.status}`);
             }
@@ -20,7 +20,7 @@ async function loadFooter() {
     const footerElement = document.querySelector("footer");
     if (footerElement) {
         try {
-            const response = await fetch("/footer.html");
+            const response = await fetch("/components/footer.html");
             if (!response.ok) {
                 throw new Error(`Failed to load footer: ${response.status}`);
             }
