@@ -10,6 +10,7 @@ body {
     min-height:125vh;
     width: 100vw;
     position: relative;
+    font-family: Arial, sans-serif;
 }
 
 body main > h1 {
