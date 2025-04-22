@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substack News Feed</title>
+    <link rel="stylesheet" href="/assets/css/global/style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <h1>Substack News Feed</h1>
+        Below is a collection of substack posts from various sources about Ukraine. The articles are sorted by publication date, with the most recent articles appearing first.
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Publication Date</th>
+                    <th>Publisher</th>
+                </tr>
+            </thead>
+            <tbody id="newsTable"></tbody>
+                <!-- News articles will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <br>
+    </main>
+
+    <script>
+        let newsData = [];
+
+        async function fetchRSSFeed() {
+            try {
+                const rssFeeds = [
+                    "https://aaronparnas.substack.com/feed",
+                    "https://ukrainebiz.substack.com/feed",
+                    "https://ukraineinformationgroup.substack.com/feed",
+                ];
+
+                const responses = await Promise.all(rssFeeds.map(feed => 
+                    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}`)
+                ));
+
+                const data = await Promise.all(responses.map(response => response.json()));
+
+                data.forEach(feedData => {
+                    if (feedData.status === 'ok') {
+                        newsData.push(...feedData.items);
+                    } else {
+                        console.error('Failed to fetch RSS feed:', feedData.message);
+                    }
+                });
+                newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                const uniqueTitles = new Set();
+                newsData = newsData.filter(item => {
+                    if (uniqueTitles.has(item.title)) {
+                        return false;
+                    } else {
+                        uniqueTitles.add(item.title);
+                        return true;
+                    }
+                });
+                renderTable(newsData);
+            } catch (error) {
+                console.error('Error fetching RSS feed:', error);
+            }
+        }
+
+        function extractDomain(url) {
+            try {
+                const domain = new URL(url).hostname;
+                return domain.replace('www.', '');
+            } catch (error) {
+                console.error('Invalid URL:', url);
+                return 'Unknown';
+            }
+        }
+
+        function renderTable(data) {
+            const newsTable = document.getElementById('newsTable');
+            newsTable.innerHTML = ''; // Clear existing rows
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
+                    <td>${new Date(item.pubDate).toLocaleDateString()}</td>
+                    <td>${extractDomain(item.link)}</td>
+                `;
+                newsTable.appendChild(row);
+            });
+        }
+
+        fetchRSSFeed();
+    </script>
+    <script src="/assets/js/global/script.js"></script>
+    <footer></footer>
+</body>
+</html>
