@@ -55,7 +55,7 @@ function deleteCookie(name) {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     alert(`The cookie "${name}" has been deleted.`);
     // populateCookieTable(); // Refresh the table after deleting the cookie
-    window.location.href = "/idgaf.html";
+    window.location.href = "/pages/idgaf.html";
 
 }
 
