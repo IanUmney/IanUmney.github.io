@@ -10,12 +10,19 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            cursor: pointer;
+
         }
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+
+        tr:first-child, td:first-child {
+            min-width: 50%
+        }
+
         th {
             background-color: #f4f4f4;
 
@@ -90,48 +97,56 @@
                 "https://metro.co.uk/news/world/feed/",
             ];
 
-            const responses = await Promise.all(rssFeeds.map(feed => 
-                fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}`)
-            ));
+                const responses = await Promise.all(rssFeeds.map(feed => 
+                    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}`)
+                ));
 
-            const data = await Promise.all(responses.map(response => response.json()));
+                const data = await Promise.all(responses.map(response => response.json()));
 
-            data.forEach(feedData => {
-                if (feedData.status === 'ok') {
-                let items = feedData.items;
+                const fourteenDaysAgo = new Date();
+                fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
 
-                // Filter sources which have open rss feeds
-                if (feedData.feed.url.includes('feeds.bbci.co.uk') ||
-                    feedData.feed.url.includes('skynews.com') ||
-                    feedData.feed.url.includes('gbnews.com') ||
-                    feedData.feed.url.includes('independent.co.uk') ||
-                    feedData.feed.url.includes('metro.co.uk')) {
-                    items = items.filter(item => 
-                    item.title.toLowerCase().includes('ukraine') || 
-                    item.title.toLowerCase().includes('russia') ||
-                    item.title.toLowerCase().includes('putin') ||
-                    item.title.toLowerCase().includes('zelensky'))
-                }
+                data.forEach(feedData => {
+                    if (feedData.status === 'ok') {
+                        let items = feedData.items;
 
-                newsData.push(...items);
-                } else {
-                console.error('Failed to fetch RSS feed:', feedData.message);
-                }
-            });
-            newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-            const uniqueTitles = new Set();
-            newsData = newsData.filter(item => {
-                if (uniqueTitles.has(item.title)) {
-                return false;
-                } else {
-                uniqueTitles.add(item.title);
-                return true;
-                }
-            });
-            renderTable(newsData);
-            
+                        // Filter sources which have open RSS feeds
+                        if (feedData.feed.url.includes('feeds.bbci.co.uk') ||
+                            feedData.feed.url.includes('skynews.com') ||
+                            feedData.feed.url.includes('gbnews.com') ||
+                            feedData.feed.url.includes('independent.co.uk') ||
+                            feedData.feed.url.includes('metro.co.uk')) {
+                        items = items.filter(item => 
+                            item.title.toLowerCase().includes('ukraine') || 
+                            item.title.toLowerCase().includes('russia') ||
+                            item.title.toLowerCase().includes('putin') ||
+                            item.title.toLowerCase().includes('zelensky'));
+                        }
+
+                        // Filter articles from the last 14 days
+                        items = items.filter(item => new Date(item.pubDate) >= fourteenDaysAgo);
+
+                        newsData.push(...items);
+                    } else {
+                        console.error('Failed to fetch RSS feed:', feedData.message);
+                    }
+                });
+
+                newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                const uniqueTitles = new Set();
+                newsData = newsData.filter(item => {
+                    if (uniqueTitles.has(item.title)) {
+                        return false;
+                    } else {
+                        uniqueTitles.add(item.title);
+                        return true;
+                    }
+                });
+
+                renderTable(newsData);
+
             } catch (error) {
-            console.error('Error fetching RSS feed:', error);
+                console.error('Error fetching RSS feed:', error);
             }
         }
 
