@@ -160,10 +160,15 @@ main {
     gap: 15px;
 }
 
-@media screen and (min-width: 800px) {
-    p {
-        font-size: 1rem;
+@media screen and (max-width: 360px) {
+    body {
+        font-size: .75rem;
     }
+
+    main {
+        width: 95%;
+    }
+    
 }
 
 #intro {
