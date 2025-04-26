@@ -1,7 +1,7 @@
 function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Convert days to milliseconds
-    const expires = date.toUTCString(); // Get the expiration date as a string
+    const expires = date.toUTCString() + 7; // Get the expiration date as a string
     const cookieValue = `${value}|${expires}`; // Include the expiry in the value
     document.cookie = `${name}=${cookieValue}; expires=${expires}; path=/`;
 }

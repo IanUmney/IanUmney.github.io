@@ -2,36 +2,120 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://ianumney.me/trident_patriots/trident_patriots</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://ianumney.me/defacto_humanity/defacto</loc>
+		<loc>https://ianumney.me/pages/trident_patriots/trident_patriots</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/defacto_humanity/defacto</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/substack-news</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/webdev25/submission</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/webdev25/about</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/webdev25/project01</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/webdev25</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/sas</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/fuckputin</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	<url>
+		<loc>https://ianumney.me/pages/cookie-policy</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/idgaf</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/404</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/resume/resume</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/contact</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/about</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://ianumney.me/pages/ukraine-news</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
 	</url>
 	<url>
 		<loc>https://ianumney.me/webdev25/about</loc>
-	</url>
-	<url>
-		<loc>https://ianumney.me/webdev25/project01</loc>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
 	</url>
 	<url>
 		<loc>https://ianumney.me/webdev25</loc>
-	</url>
-	<url>
-		<loc>https://ianumney.me/fuckputin</loc>
-	</url>
-	<url>
-		<loc>https://ianumney.me/cookie-policy</loc>
-	</url>
-	<url>
-		<loc>https://ianumney.me/404</loc>
-	</url>
-	<url>
-		<loc>https://ianumney.me/about</loc>
-		<lastmod>2025-04-16</lastmod>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
 		<changefreq>daily</changefreq>
+		<priority>1</priority>
 	</url>
 	<url>
 		<loc>https://ianumney.me</loc>
-		<lastmod>2025-04-16</lastmod>
+		<lastmod>2025-04-24-T09:50:02+01:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
 	</url>
