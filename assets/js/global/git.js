@@ -42,3 +42,4 @@ async function fetchCommits() {
 document.addEventListener("DOMContentLoaded", async () => {
     await fetchCommits();
 });
+
