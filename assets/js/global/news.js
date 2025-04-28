@@ -89,7 +89,7 @@ let newsData = [];
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td><a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
+                    <td>- <a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
                     <td>${new Date(item.pubDate).toLocaleDateString('en-GB')}</td>
                     <td>${extractDomain(item.link)}</td>
                 `;
@@ -97,4 +97,4 @@ let newsData = [];
             });
         }
 
-        fetchRSSFeed();
+        // fetchRSSFeed();
