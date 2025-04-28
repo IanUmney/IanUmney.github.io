@@ -219,3 +219,18 @@ main {
         max-width: 100%;
     }
 }
+
+@media screen and (max-width: 430px) {
+    #news-brief-solo {
+        display: none;
+    }
+    main {
+        width: 90%;
+    }
+    #newsTable td:nth-child(2), /* Hide the publication date column */
+    #newsTable td:nth-child(3), /* Hide the publisher column */
+    #newsTable th:nth-child(2), /* Hide the publication date header */
+    #newsTable th:nth-child(3) { /* Hide the publisher header */
+        display: none;
+    }
+}
