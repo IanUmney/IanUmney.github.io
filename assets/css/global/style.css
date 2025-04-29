@@ -247,3 +247,18 @@ main {
         display: none;
     }
 }
+
+#curse {
+    background-color: black;
+    color: black;
+}
+
+.sml {
+    min-width: 30px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+#home-main-about > h4{
+    margin-top: 10px;
+}

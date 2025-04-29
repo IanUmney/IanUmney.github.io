@@ -109,5 +109,5 @@ let newsData = [];
             });
 
         }
-
+    }
         // fetchRSSFeed();
