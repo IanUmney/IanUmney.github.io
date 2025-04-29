@@ -210,14 +210,26 @@ main {
     max-height: 300px;
 }
 
+#news-brief-solo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+}
+
 #news-brief > div {
-    padding: 5px;
-    width: 50%;
+    /* padding: 5px; */
+    max-width: 50%;
     p {
         text-justify: justify;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     img {
         max-width: 100%;
+        max-height: 200px;
+        min-height: 100px;
     }
 }
 
