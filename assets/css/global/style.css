@@ -37,7 +37,7 @@ main {
 }
 
 .hr {
-    width: 75%;
+    width: 80%;
     margin: 10px auto;
 }
 
@@ -262,7 +262,6 @@ main {
     margin-bottom: 5px;
 }
 
-#home-main-about > div > h3, 
-#home-main-about > div > h2 {
+#home-main-about h4 {
     margin-top: 10px; 
 }
