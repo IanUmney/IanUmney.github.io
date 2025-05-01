@@ -11,7 +11,7 @@
     <meta name="author" content="Ian Umney">
     <link rel="stylesheet" href="/assets/css/global/style.css">
     <link rel="icon" href="https://s3.us-east-1.amazonaws.com/ianumney.me/src/favicon-32x32.png" type="image/png">
-    <title>Ian Umney | Home</title>
+    <title>Ian Umney  | Home</title>
 </head>
 <body>
     <!--Load the cookie script-->
@@ -21,10 +21,22 @@
     </header>
 
     <main>
-        <p><h1>Home</h1></p>
-        <div style="height:100px;display:flex;text-align: center;align-items: center;justify-items: center;">
-            It sucks this isn't ready yet but I am working on it. I promise!
-        </div>
+        <br>
+        <section id="news-brief">
+            <p>You can find the latest news from a range of sources <a href="/pages/ukraine-news.html">ianumney.me/ukraine-news</a></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>LATEST NEWS 🇺🇦</th>
+                    </tr>
+                </thead>
+                <tbody id="news-brief-log"></tbody>
+                    <!-- News articles will be dynamically inserted here -->
+                </tbody>
+            </table>
+
+        </section>
+
 
         <!-- <section>
             <div id="profile-container" 
@@ -53,7 +65,7 @@
 
         <section>
             <div id="changelog">
-                <div style="display: flex; gap: 10px;" id="changelog-header">
+                <div id="changelog-header">
                     <img style="width: 32px; height: 32px; align-self: center;" src="https://s3.us-east-1.amazonaws.com/ianumney.me/src/github-mark.svg" alt="GitHub Logo" class="github-logo">
                     <div style="display: flex; flex-direction: column;">
                         <h2><u>Recent Commits</u></h2>
@@ -73,6 +85,7 @@
         <!-- This footer will load automatically-->
     </footer>
     <script src="/assets/js/global/script.js" ></script>
+    <script src="/assets/js/global/news.js" ></script>
     <script src="/assets/js/global/cookie.js" defer></script>
     <script src="/assets/js/global/git.js" defer ></script>
     <script type="application/ld+json">
