@@ -172,28 +172,6 @@ main {
 }
 
 
-#intro {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    img {
-        height: 120px;
-        border-radius: 25px;
-    }
-    #intro-hosted {
-        display: flex;
-        flex-direction: column;
-
-        gap: 10px;
-    }
-    #ncl-coll {
-        height: 100px;
-    }
-   
-}
-
 #news-brief-header {
     display: flex;
     flex-direction: column;
@@ -264,4 +242,26 @@ main {
 
 #home-main-about h4 {
     margin-top: 10px; 
+}
+
+#intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    img {
+        height: 120px;
+        border-radius: 25px;
+    }
+    #intro-hosted {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+    #ncl-coll {
+        height: 100px;
+    }
+   
 }
