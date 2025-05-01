@@ -110,4 +110,4 @@ let newsData = [];
 
         }
     }
-        // fetchRSSFeed();
+        fetchRSSFeed();
