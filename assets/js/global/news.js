@@ -30,6 +30,7 @@ let newsData = [];
             fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
 
             data.forEach(feedData => {
+                console.log(feedData.status);
                 if (feedData.status === 'ok') {
                     let items = feedData.items;
 
@@ -50,9 +51,7 @@ let newsData = [];
                     items = items.filter(item => new Date(item.pubDate) >= fourteenDaysAgo);
 
                     newsData.push(...items);
-                } else {
-                    console.error('Failed to fetch RSS feed:', feedData.message);
-                }
+                } 
             });
 
             newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
@@ -84,9 +83,9 @@ let newsData = [];
     }
 
     function renderTable(data) {
-        if (document.getElementById('news-brief-log') === null) {
-            const newsLsit = document.getElementById("news-brief-log");
-            newsLsit.innerHTML = ''; // Clear existing rows
+        if (document.getElementById('news-brief-log') !== null) {
+            const newsList = document.getElementById("news-brief-log");
+            newsList.innerHTML = ''; // Clear existing rows
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -94,20 +93,20 @@ let newsData = [];
                 `;
                 newsLsit.appendChild(row);
             });
-
-        } else if (document.getElementById('newsTable')) {
-            const newsTable = document.getElementById('newsTable');
-            newsTable.innerHTML = ''; // Clear existing rows
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>- <a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
-                    <td>${new Date(item.pubDate).toLocaleDateString('en-GB')}</td>
-                    <td>${extractDomain(item.link)}</td>
-                `;
-                newsTable.appendChild(row);
-            });
-
         }
+        // } else if (document.getElementById('newsTable')) {
+        //     const newsTable = document.getElementById('newsTable');
+        //     newsTable.innerHTML = ''; // Clear existing rows
+        //     data.forEach(item => {
+        //         const row = document.createElement('tr');
+        //         row.innerHTML = `
+        //             <td>- <a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
+        //             <td>${new Date(item.pubDate).toLocaleDateString('en-GB')}</td>
+        //             <td>${extractDomain(item.link)}</td>
+        //         `;
+        //         newsTable.appendChild(row);
+        //     });
+
+        // }
     }
         fetchRSSFeed();
