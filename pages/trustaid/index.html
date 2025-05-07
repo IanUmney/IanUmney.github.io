@@ -62,10 +62,10 @@
         font-size: 0.9em;
         margin-top: 10px;
       }
-      #why {
+      .warn {
         border-left: 4px solid #8A0000;
         background-color: #f8d7da;
-        padding: 1rem;
+        padding: .5rem;
       }
       .green {
         background-color: #d4edda;
@@ -76,9 +76,8 @@
 </head>
 <body>
     <header>
-      <section>
-        <h2>Why does this page exist?</h2>  
-        <p id="why">
+      <section class="warn">
+        <p>
           This page is dedicated to raising awareness about the <strong>World Aid Runners</strong> organisation and its public disclosure obligations.
           It serves as a repository for individuals who have concerns with the organisation. It is also designed to be a place to display their responses or reactions.
       </section>
@@ -130,7 +129,7 @@
       <section>
         <h2>How You Can Help</h2>
         <ol>
-          <li><a href="mailto:bdusing@bgdlaw.com?subject=Document Request&body=Dear Ben / WAR,%0D%0A%0D%0AI am requesting copies of the following public documents, as required under IRS Code §6104:%0D%0A- IRS Determination Letter%0D%0A- Form 1023%0D%0A- Form 990-PF%0D%0A%0D%0AThank you.%0D%0A" target="_blank">Submit your own public records request</a> to World Aid Runners</li>
+          <li><a href="#submit-request">Submit your own public records request</a> to World Aid Runners</li>
           <li>If ignored, file a complaint using <a href="https://www.irs.gov/pub/irs-pdf/f13909.pdf" target="_blank">IRS Form 13909</a></li>
           <li>Use this site to report your experience (feature coming soon)</li>
           <li>Share this information and help hold the organisation accountable</li>
@@ -151,45 +150,86 @@
         <p>Thank you for your correspondence.</p>
         <p>Regards, <br>Ben Dusing <br>Co-Founder and Director<br> WAR</p>
       </section>
-
-      <section>
-
-      </section>
-    
+      <br>
+      <section id="anonymous-requests" class="highlight">
+        <h2>Are Anonymous Requests Allowed?</h2>
+        <p>Yes. Under U.S. federal law, you have the legal right to request documents from tax-exempt charities anonymously. Organizations cannot demand your name, reason for inquiry, or any identifying information.</p>
       
-
+        <h3>Legal Sources:</h3>
+        <ul>
+          <li>
+            <strong>26 CFR § 301.6104(d)-1(a)(1):</strong>
+            <em>“A tax-exempt organization must honor a request... regardless of the identity of the requester.”</em><br>
+            <a href="https://www.law.cornell.edu/cfr/text/26/301.6104(d)-1" target="_blank">Read regulation</a>
+          </li>
+          <li>
+            <strong>IRS EO Guide for Public Charities:</strong>
+            <em>“The organization may not require a person requesting a copy... to provide personal identification.”</em><br>
+            <a href="https://www.irs.gov/pub/irs-pdf/p4221pc.pdf" target="_blank">See official IRS guide (PDF)</a>
+          </li>
+          <li>
+            <strong>IRS Form 13909:</strong>
+            You may file a complaint anonymously if a nonprofit refuses to comply.<br>
+            <a href="https://www.irs.gov/pub/irs-pdf/f13909.pdf" target="_blank">Download Form 13909 (PDF)</a>
+          </li>
+        </ul>
+      
+        <p>This means <strong>anyone</strong> — regardless of citizenship or reason — can submit a valid request, and the organization must respond within 30 days.</p>
+      </section>
+      <br>
+      <section id="illegal-actions" class="warn">
+        <h2>What Actions Are Illegal in This Situation?</h2>
+        <p>If a charity officer or representative fails to follow federal disclosure laws, they may be in violation of IRS Code §6104(d). Here are examples of actions that are not permitted:</p>
+      
+        <ul>
+          <li><strong>Refusing to provide required documents:</strong> It is illegal to deny access to Form 990-PF, Form 1023, or the IRS Determination Letter.</li>
+          <li><strong>Delaying beyond 30 days:</strong> For written requests, failure to respond within 30 days can trigger a $20/day fine, up to $10,000.</li>
+          <li><strong>Demanding personal information:</strong> Asking for your name, reason for the request, or any identification is not allowed.</li>
+          <li><strong>Overcharging for document copies:</strong> Only actual reproduction and mailing costs may be charged—excessive fees are not permitted.</li>
+          <li><strong>Providing incomplete or altered records:</strong> Supplying redacted or falsified documents violates IRS rules.</li>
+          <li><strong>Not allowing in-person access:</strong> If the organization has a physical office, it must provide access to records during regular business hours.</li>
+          <li><strong>Retaliation or harassment:</strong> Threatening, intimidating, or retaliating against a requester is unlawful and may lead to further consequences.</li>
+          <li><strong>Ignoring IRS follow-up:</strong> Failure to cooperate after a Form 13909 complaint can result in audits, penalties, or loss of tax-exempt status.</li>
+        </ul>
+      
+        <p>These actions can result in IRS penalties and public accountability. All tax-exempt organizations are legally obligated to comply with public transparency laws.</p>
+      </section>
+      
+      
+      <section id="submit-request">
         <h2>Send a records request</h2>
-  <p>Please use this form to describe any relevant experiences or concerns. Submissions may be anonymous, and your privacy is respected.</p>
+        <p>Please use this form to describe any relevant experiences or concerns. Submissions may be anonymous, and your privacy is respected.</p>
 
-  <form action="https://formspree.io/f/mldbnbzk" method="POST" enctype="multipart/form-data">
+        <form action="https://formspree.io/f/mldbnbzk" method="POST" enctype="multipart/form-data">
 
-    <label for="id">Unique Id (for response reference)</label>
-    <input type="text" name="id" id="id" required readonly>
-    
-    <label for="name">Your Name (optional)</label>
-    <input type="text" name="name" id="name">
+          <label for="id">Unique Id (for response reference)</label>
+          <input type="text" name="id" id="id" required readonly>
+          
+          <label for="name">Your Name (optional)</label>
+          <input type="text" name="name" id="name">
 
-    <label for="email">Your Email (optional)</label>
-    <input type="email" name="email" id="email">
+          <label for="email">Your Email (optional)</label>
+          <input type="email" name="email" id="email">
 
-    <label for="date">Date of your request</label>
-    <input type="date" name="date" id="date" readonly>
+          <label for="date">Date of your request</label>
+          <input type="date" name="date" id="date" readonly>
 
-    <label for="details">Your Request</label>
-    <textarea name="details" id="details" rows="6">Dear World Aid Runners / Benjamin Dusing, I am requesting any Form 990-PF filings you have done. Thank you kindly.</textarea>
+          <label for="details">Your Request</label>
+          <textarea name="details" id="details" rows="6">Dear World Aid Runners / Benjamin Dusing, I am requesting any Form 990-PF filings you have done. Thank you kindly.</textarea>
 
 
 
-    <label class="consent">
-      <input type="checkbox" name="consent" required>
-      I consent to this information being collected and stored for review.
-    </label>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            I consent to this information being collected and stored for review.
+          </label>
 
-    <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
 
-    <p>This form will be forwarded to Benjamin Dusing and World Aid Runners. Any update to your request will be posted on this website.</p>
+          <p>This form will be forwarded to Benjamin Dusing and World Aid Runners. Any update to your request will be posted on this website.</p>
 
-  </form>
+        </form>
+      </section>
 
 <br>
   <!-- <section>
