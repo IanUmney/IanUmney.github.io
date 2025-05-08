@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustAid - Donations to be trusted">
+    <title>TrustAid</title>
+    <style>
+      main {
+          font-family: Arial, sans-serif;
+          padding: 40px;
+          max-width: 850px;
+          margin: auto;
+        }
+      .highlight { 
+        background: #fffbcc; 
+        padding: 0.5rem; 
+        border-left: 4px solid #f39c12; 
+      }
+      .important { 
+        color: #c0392b; 
+        font-weight: bold; 
+      }
+        h1 {
+          color: #333;
+        }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      input[type="checkbox"] {
+        width: auto;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #0058a3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #00417a;
+      }
+      .consent {
+        font-size: 0.9em;
+        margin-top: 10px;
+      }
+      .warn {
+        border-left: 4px solid #8A0000;
+        background-color: #f8d7da;
+        padding: .5rem;
+      }
+      .green {
+        background-color: #d4edda;
+        border-left: 4px solid #155724;
+        padding: 1rem;
+      }.blue {
+        background-color: #cce5ff;
+        border-left: 4px solid #004085;
+        padding: 1rem;
+      }
+      #navbar {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 10px;
+      }
+      #top-link {
+        position: relative;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <ul id="navbar">
+          <li><a href="/trustaid/index.html">Home</a></li>
+          <li><a href="/trustaid/about.html">About</a></li>
+          <li><a href="/trustaid/#contact" class="active">Contact</a></li>
+          <li><a href="" class="active">Humanitarian Aid Blockchain</a><small> (Coming Soon)</small></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+        <section>
+            <h1>About</h1>
+            <p>The first goal of TrustAid is to gather evidence against World Aid Runners to satisfy that they have, and are acting in the interest of the foundation.</p>
+            <p>The future of TrustAid is that of ensuring that, through smart contracts and blockchain technologies, trust, transparency, even funding is possible and accessbile to all humanitarian aid charities and volunteers.  </p>
+            <p>The need for transparency and future technologies in public affairs is essential in the modern day. It has always been my aim to help as many people as I can, however passively. This has previously meant restraining myself against official actions such as my involvement with <a href="https://www.spiritofukrainefoundation.org/">Spirit of Ukraine</a>, in consideration to the effect my actions would have had.</p>
+            <p>There must be accountability. This recent incident has made be focus once again on bringing accountability to aid charities and volunteers who have displayed signs of untrustworthiness.</p>
+        </section>
+        <br>
+        <section>
+            <h2>Future Plans</h2>
+            <p>TrustAid <i><small>(Trusted)</small></i> will demonstrate the ability to incorporate blockchain technology and smart contracts as a layer of trust and accountability with direct donations, and charity engagement. The decentralised nature of the blockchain and activity verification methods, allow a strong foundation for essential operations for humanitarian aid.</p>
+        </section>
+
+        <section>
+            <h2>Join the Waiting List</h2>
+            <p>Get notified when the first version of the project will launch.</p>
+            <form action="https://formspree.io/f/xwpobwdw" method="POST">
+                <label>Your email:<input type="email" name="email">
+                    </label>
+                <button type="submit">Send</button>
+            </form>
+
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    <!-- <script src="/assets/js/global/script.js" defer></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const generateA1B2Code = () => {
+          const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          const digits = "0123456789";
+          return (
+            letters.charAt(Math.floor(Math.random() * letters.length)) +
+            digits.charAt(Math.floor(Math.random() * digits.length)) +
+            letters.charAt(Math.floor(Math.random() * letters.length)) +
+            digits.charAt(Math.floor(Math.random() * digits.length))
+          );
+        };
+        document.getElementById("id").value = generateA1B2Code();
+
+
+        const dateInput = document.getElementById("date");
+        const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+        dateInput.value = today;
+
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+    const dateInput = document.getElementById("date");
+    const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    dateInput.value = today;
+  });
+    </script>
+    <a id ="top-link" href="#navbar">Back to top</a>
+    
+</body>
+</html>
