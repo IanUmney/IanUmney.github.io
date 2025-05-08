@@ -265,3 +265,9 @@ main {
     }
    
 }
+
+.highlight { 
+    background: #fffbcc; 
+    padding: 0.5rem; 
+    border-left: 4px solid #f39c12; 
+  }
