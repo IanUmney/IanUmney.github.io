@@ -5,31 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transparent Aid</title>
   <style>
-    body {
-      margin: 0;
+    main {
       font-family: Arial, sans-serif;
       color: #333;
       background-color: #fff;
-      text-align: center;
-    }
-    header, footer {
-      background-color: #2563eb;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+      text-align: left;
+      max-width: 85%;
+      padding: 40px;
+      margin: auto;
     }
     section {
-      padding: 2rem;
-    }
-    .bg-light {
-      background-color: #f3f4f6;
-    }
-    .text-left {
-      text-align: left;
-    }
-    .max-width {
-      max-width: 800px;
-      margin: 0 auto;
+      margin-bottom: 2rem;
     }
     ul {
       list-style: disc inside;
@@ -72,27 +58,90 @@
       gap: 1rem;
       margin-top: 1rem;
     }
+    .highlight { 
+        background: #fffbcc; 
+        padding: 0.5rem; 
+        border-left: 4px solid #f39c12; 
+      }
+      .green {
+        background-color: #d4edda;
+        border-left: 4px solid #155724;
+        padding: 1rem;
+      }
+      .blue {
+        background-color: #cce5ff;
+        border-left: 4px solid #004085;
+        padding: 1rem;
+      }
+      .tag {
+        width: 80%;
+        justify-self: center;
+      }
+      #navbar {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      input[type="checkbox"] {
+        width: auto;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #0058a3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #00417a;
+      }
+      
   </style>
 </head>
 <body>
   <header>
-    <div>
-        <a href="/index.html">About</a>
-        <a href="/index.html">About</a>
-            
-    </div>
-    <div>
-        <h1>Trust Where It Matters Most</h1>
-        <p>Transparent Aid for Real Impact</p>
-    </div>
+    <nav>
+      <ul id="navbar">
+        <li><a href="/trustaid/index.html">Home</a></li>
+        <li><a href="/trustaid/about.html">About</a></li>
+        <li><a href="/trustaid/index.html#contact">Contact</a></li>
+        <li><a href="/trustaid/blockchain.html">Blockchain</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <section class="text-center">
-    <h2>We help donors, volunteers, and aid organizations track every dollar and ensure it reaches the people who need it — no crypto required.</h2>
+<main>
+  <section>
+    <h1>TrustAid Blockchain</h1>
+    <p>The goal is to ensure the public can track every penny of their donation and ensure it reaches the people who need it.</p>
+    <p>The following six months will involve research, testing, implementation, and eventually delivery of the blockchain for use by general public.</p>
+    <p>This page will be updated with relevant information.</p>
   </section>
 
-  <section class="bg-light">
-    <div class="max-width">
+  <section class="highlight">
+    <div>
       <h3>The Challenge</h3>
       <ul>
         <li>Billions are donated, but trust is low due to lack of visibility.</li>
@@ -102,9 +151,9 @@
     </div>
   </section>
 
-  <section>
-    <div class="max-width">
-      <h3>Our Solution</h3>
+  <section class="green">
+    <div>
+      <h3>The Solution</h3>
       <p>A public, blockchain-powered ledger that records every donation, milestone, and proof of impact — in real time.</p>
       <ul>
         <li>Donations in any currency</li>
@@ -114,33 +163,38 @@
     </div>
   </section>
 
-  <section class="bg-light">
-    <div class="max-width text-center">
-      <h3>How It Works</h3>
+  <section>
+    <div>
+      <h2>How It Works</h2>
       <div class="grid grid-2">
         <div class="card">
           <h4>1. You Donate</h4>
-          <p>Use your method of choice — bank, PayPal, crypto, etc.</p>
+          <p>Using our payment portal</p>
+          <p>On payment, you create a smart contract with the blockchain with the parameters you set.</p>
         </div>
         <div class="card">
           <h4>2. Blockchain Record</h4>
-          <p>Every donation is logged on the blockchain, tamper-proof.</p>
+          <p>Every donation is logged on the blockchain and is tamper-proof.</p>
+          <p>Because it is decentralised, anyone can view it.</p>
         </div>
         <div class="card">
           <h4>3. Upload Proof</h4>
           <p>Photos, receipts, and reports are stored via IPFS.</p>
+          <p>This ensures users can always access it, and tampering is clearly visible.</p>
         </div>
         <div class="card">
           <h4>4. Track Impact</h4>
           <p>Donors can see the results in real time.</p>
+          <p>As a trusted person, you can also help to verify data on the blockchain.</p>
+          <p></p>
         </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="max-width">
-      <h3>Why Blockchain?</h3>
+    <div class="blue">
+      <h2>Why Blockchain?</h2>
       <ul>
         <li>Permanently visible, tamper-proof records</li>
         <li>Open verification for anyone</li>
@@ -150,31 +204,25 @@
     </div>
   </section>
 
-  <section class="bg-light">
-    <div class="max-width">
-      <h3>Real Use Cases</h3>
-      <ul>
-        <li>Fund a medical clinic in eastern Ukraine</li>
-        <li>Track aid to displaced families</li>
-        <li>Proof of supplies delivered to volunteers</li>
-        <li>NGO accountability through transparent reporting</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="text-center">
-    <div class="max-width">
+  <section>
+    <div>
       <h3>Get Involved</h3>
       <p>Whether you’re a donor, aid worker, NGO, or developer — you can join a trusted ecosystem that puts people first.</p>
-      <div class="button-group">
-        <button class="btn btn-primary">Join the Waitlist</button>
-        <button class="btn btn-secondary">Contact Us</button>
-      </div>
+      <p>Enter your email below to be alerted when a milestone is reached for this project.</p>
+      <form action="https://formspree.io/f/xrbqkord" method="POST">
+        <label>Your email: <input type="email" name="email">
+          </label>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </section>
+  
 
-  <footer>
-    <p>&copy; 2025 TransparentAid. All rights reserved.</p>
+</main>
+  <footer style="text-align: center;">
+   <a href="https://donate.stripe.com/7sIdU5bsbglQ8tG4gg">Tip the Developer</a>
   </footer>
+  <br>
+  <br>
 </body>
 </html>
