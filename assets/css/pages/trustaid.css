@@ -142,3 +142,10 @@ section {
     background-color: red;
     transition: background-color 1s ease;
   }
+
+  #response-counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
