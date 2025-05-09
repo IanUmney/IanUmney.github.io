@@ -1,0 +1,144 @@
+main {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    max-width: 850px;
+    margin: auto;
+  }
+.highlight { 
+  background: #fffbcc; 
+  padding: 0.5rem; 
+  border-left: 4px solid #f39c12; 
+}
+.important { 
+  color: #c0392b; 
+  font-weight: bold; 
+}
+  h1 {
+    color: #333;
+  }
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+input, textarea, select {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+input[type="checkbox"] {
+  width: auto;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0058a3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #00417a;
+}
+.consent {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.warn {
+  border-left: 4px solid #8A0000;
+  background-color: #f8d7da;
+  padding: .5rem;
+}
+.green {
+  background-color: #d4edda;
+  border-left: 4px solid #155724;
+  padding: 1rem;
+}
+.blue {
+  background-color: #cce5ff;
+  border-left: 4px solid #004085;
+  padding: 1rem;
+}
+#navbar {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+}
+#top-link {
+  position: sticky;
+  bottom:0;
+  text-decoration: none;
+}
+.quote {
+  max-width: 80%;
+  justify-self: center;
+  font-style: italic;
+  padding-left: .5rem;
+  border-left: 4px solid #8A0000;
+}
+#petition-num {
+  font-size: 3em;
+  font-weight: bold;
+  color: #0058a3;
+  text-align: center;
+
+}
+section {
+    margin-bottom: 3rem;
+  }
+  ul {
+    list-style: disc inside;
+    padding-left: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media(min-width: 768px) {
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+  }
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #2563eb;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .highlighted {
+    background-color: red;
+    transition: background-color 1s ease;
+  }
