@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TrustAid - Donations to be trusted">
     <link rel="icon" href="https://s3.us-east-1.amazonaws.com/ianumney.me/src/favicon-32x32.png" type="image/png">
-    <title>TrustAid</title>
+    <title>TrustAid | Home</title>
     <style>
       main {
           font-family: Arial, sans-serif;
@@ -37,7 +37,7 @@
         font-weight: bold;
       }
       input, textarea, select {
-        width: 100%;
+        width: 95%;
         padding: 10px;
         margin-top: 5px;
         border-radius: 4px;
@@ -96,6 +96,13 @@
         padding-left: .5rem;
         border-left: 4px solid #8A0000;
       }
+      #petition-num {
+        font-size: 3em;
+        font-weight: bold;
+        color: #0058a3;
+        text-align: center;
+
+      }
     </style>
 </head>
 <body>
@@ -104,7 +111,7 @@
         <ul id="navbar">
           <li><a href="/trustaid/index.html">Home</a></li>
           <li><a href="/trustaid/about.html">About</a></li>
-          <li><a href="#contact" class="active">Contact</a></li>
+          <li><a href="/trustaid/contact.html">Contact</a></li>
           <li><a href="/trustaid/blockchain.html">Blockchain</a></li>       
           <li><a href="/trustaid/responses.html">Responses</a></li>          
         </ul>
@@ -112,14 +119,24 @@
       
     </header>
     <main>
-      <section class="warn">
+
+      <form action="https://formspree.io/f/movdljae" method="POST">
+        <p>Sign this petition to show governments and agencies how many people are concerned with the actions of Word Aid Runners, and think they should be investigated further.</p>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="agree"><input type="checkbox" id="agree" name="agree" required> I agree to sign this petition and report Ben Dusing to the authorities for investigation.</label>
+        <button type="submit">Submit</button> 
+        <div id="petition-num">1</div>
+      </form>
+      
+      
+<br>
+      <h1>World Aid Runners Awareness</h1>
+      <section>
         <p>
           This page is dedicated to raising awareness about the <strong>World Aid Runners</strong> organisation and its public disclosure obligations.
           It serves as a repository for individuals who have concerns with the organisation. It is also designed to be a place to display their responses or reactions.
       </section>
-      
-<br>
-      <h1>World Aid Runners Public Disclosure Case</h1>
 
       <section>
         <h2>Overview</h2>
@@ -127,15 +144,18 @@
           <a href="https://www.worldaidrunners.org/"><strong>World Aid Runners</strong></a>, a registered <a href="https://www.irs.gov/charities-non-profits/charitable-organizations/private-foundations"><strong>501(c)(3) private foundation</strong></a>, was granted IRS tax-exempt status on <strong>February 27, 2023</strong>.
           As a nonprofit, it is <a href="https://www.irs.gov/charities-non-profits/private-foundations/life-cycle-of-a-private-foundation-required-filings">legally required</a> to make specific documents available to the public upon request.
         </p>
-        <h2>Who is Benjamin Dusing?</h2>
+        <h2>Who is Responsible?</h2>
         <p>Benjamin G Dusing is the director of World Aid Runners. </p>
 
-        <h3>Previous Threatening Behaviour</h3>
-        <p class="quoted">"The following day, Dusing posted an incredibly disturbing and threatening video on Facebook."</p>
-        <p class="quoted">"Judge Mehling became aware of Dusing’s video...who made physical threats against his staff attorney"</p>
-        
-        <h3>Previous Bribery Attempts to Sway Court Proceedings</h3>
-        <p class="quoted">"In yet another notable incident, Dusing hired Dr. Ed Connor as a consulting psychologist to advise him in the Bakker litigation.  After Dr. Connor issued a custodial evaluation, Dusing’s attorney, Joseph Otis, went to Dr. Connor’s office and offered him some form of payment.  Dusing contends the payment was not a bribe, but rather was for additional services and that Dr. Connor was confused about his role in the litigation.  In a written order, however, the Family Court found that Otis at Dusing’s direction had offered Dr. Connor $5,000 to change his custodial evaluation and to designate it as preliminary."</p>
+        <section class="highlight">
+          <h3>Previous Questionable Behaviour</h3>
+        <ul>
+          <li><strong>Misconduct:</strong> Dusing engaged in aggressive, disruptive, and threatening behavior during two family court cases (one with his ex-wife and another with a former partner).</li>
+          <li><strong>Facebook Video:</strong> In 2021, Dusing posted a profane, threatening video targeting a judge’s staff attorney and opposing counsel, which the court found highly inappropriate and disruptive to the judicial process.</li>
+          <li><strong>Bribery Allegation:</strong> He was found to have directed his co-counsel to offer a psychologist $5,000 to modify a custody evaluation, a serious ethical violation.</li>
+          <li><strong>Frivolous Legal Tactics:</strong> Dusing filed numerous baseless motions, appeals, and complaints, many aimed at disrupting proceedings or intimidating other participants.</li>
+        </ul>
+        </section>
 
        
       </section>
@@ -144,7 +164,7 @@
         <h2>Why There Is Concern</h2>
         <p>Multiple individuals have independently raised concerns about the conduct of the charity's representative based on direct interactions and patterns of behavior that raise red flags. While each person may have a different reason, together these accounts suggest a potential pattern of mismanagement or dishonesty.</p>
       
-        <ul>
+        <ul class="w">
           <li><strong>Lack of Transparency:</strong> Despite repeated requests, legally required financial documents have not been provided, even after deadlines and follow-up attempts.</li>
           <li><strong>Inconsistent Communication:</strong> Emails and messages are often ignored or met with vague responses, which delays resolution and transparency.</li>
           <li><strong>Multiple Independent Complaints:</strong> Separate individuals have come forward with concerns ranging from misuse of funds to misleading statements, with no clear accountability or oversight in place.</li>
@@ -274,7 +294,15 @@
           <input type="date" name="date" id="date" readonly>
 
           <label for="details">Your Request</label>
-          <textarea name="details" id="details" rows="6">Dear World Aid Runners / Benjamin Dusing, I am requesting any Form 990-PF filings you have done. Thank you kindly.</textarea>
+          <textarea name="details" id="details" rows="6">Dear World Aid Runners,
+
+I am writing to submit a formal public records request for copies of your Form 990-PF filings for the most recent reporting years.
+            
+If possible, please provide these documents in electronic format for ease of review. 
+            
+Thank you for your attention to this request. I look forward to your response within the time frame stipulated by applicable laws.
+            
+Sincerely,</textarea>
 
 
 
@@ -290,17 +318,7 @@
         </form>
       </section>
       <br>
-      <section id="contact">
-        <h2>Send an email to the developer, <a href="https://www.tiktok.com/@ian_umney">Ian Umney</a>. Or <a href="https://donate.stripe.com/7sIdU5bsbglQ8tG4gg">Tip me</a></h2>
-        <p>You can include anything related to this case, or relating to me.</p>
-        <form action="https://formspree.io/f/xrbqkord" method="POST">
-          <label>Your email: <input type="email" name="email">
-            </label>
-          <label>Your message: <textarea name="message"></textarea>
-            </label>
-          <button type="submit">Send</button>
-        </form>
-      </section>
+      
 
 <br>
   <!-- <section>
