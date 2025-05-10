@@ -143,13 +143,6 @@ section {
     transition: background-color 1s ease;
   }
 
-  #response-counter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-
   .text-center {
     text-align: center;
     font-size: 1.2em;
@@ -166,4 +159,11 @@ section {
   }
   #bio {
     display: flex;
+  }
+
+  #response-counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
   }
