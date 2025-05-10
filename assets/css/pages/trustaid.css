@@ -61,12 +61,12 @@ button:hover {
 .green {
   background-color: #d4edda;
   border-left: 4px solid #155724;
-  padding: 1rem;
+  padding: .5rem;
 }
 .blue {
   background-color: #cce5ff;
   border-left: 4px solid #004085;
-  padding: 1rem;
+  padding: .5rem;
 }
 #navbar {
   list-style: none;
@@ -148,4 +148,10 @@ section {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+  }
+
+  .text-center {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
   }
