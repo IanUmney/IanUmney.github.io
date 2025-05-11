@@ -172,3 +172,7 @@ section {
     align-items: center;
     gap: 10px;
   }
+  .picture {
+    max-height: 300px;
+
+  }
