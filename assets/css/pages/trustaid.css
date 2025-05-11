@@ -40,14 +40,11 @@ input[type="checkbox"] {
 button {
   margin-top: 20px;
   padding: 10px 20px;
-  background: #0058a3;
+  background: grey;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-button:hover {
-  background: #00417a;
 }
 .consent {
   font-size: 0.9em;
@@ -82,9 +79,9 @@ button:hover {
 }
 .quote {
   max-width: 80%;
-  justify-self: center;
   font-style: italic;
   padding-left: .5rem;
+  margin-left: 5rem;
   border-left: 4px solid #8A0000;
 }
 #petition-num {

@@ -24,36 +24,40 @@
       
     </header>
     <main>
-
-      
-      
+      <h1>TrustAid - Trusted Aid Funding and Delivery</h1>
+      <section>
+        <p>My goal with TrustAid is to provide a record of existing humanitarian aid organisations and their activities, as well 
+          as to provide a platform for individuals to report any concerns they may have about these organisations.</p>
+      </section>
 
       <h1>World Aid Runners Awareness</h1>
       <section>
         <p>
-          This page is dedicated to raising awareness about the <strong>World Aid Runners</strong> organisation and its public disclosure obligations.
-          It serves as a repository for individuals who have concerns with the organisation. It is also designed to be a place to display their responses or reactions.
+          This page is dedicated to raising awareness about the <strong>World Aid Runners</strong> organisation and its public 
+          disclosure obligations.
+          It serves as a repository for individuals who have concerns with the organisation. It is also designed to be a place 
+          to display their responses or reactions.
+        </p>
       </section>
 
       <section>
         <h2>Overview</h2>
-        <p>
-          <a href="https://www.worldaidrunners.org/"><strong>World Aid Runners</strong></a>, a registered <a href="https://www.irs.gov/charities-non-profits/charitable-organizations/private-foundations"><strong>501(c)(3) private foundation</strong></a>, was granted IRS tax-exempt status on <strong>February 27, 2023</strong>.
+        <p><a href="https://www.worldaidrunners.org/"><strong>World Aid Runners</strong></a>, a registered <a href="https://www.irs.gov/charities-non-profits/charitable-organizations/private-foundations"><strong>501(c)(3) private foundation</strong></a>, was granted IRS tax-exempt status on <strong>February 27, 2023</strong>.
           As a nonprofit, it is <a href="https://www.irs.gov/charities-non-profits/private-foundations/life-cycle-of-a-private-foundation-required-filings">legally required</a> to make specific documents available to the public upon request. After simply asking for these documents, along with other questions, members of the public have been shamed, berated, and left feeling threatened by the organisation's representatives.
         </p>
-        <h2>Who is Responsible?</h2>
-        <p><a href="/trustaid/bendusing.html">Benjamin G Dusing</a> is the director of World Aid Runners. He has previously been involved in illegal and shady activities.</p>
 
-        
-
+        <h2>Who is Behind World Aid Runners?</h2>
+        <p><a href="/trustaid/bendusing.html">Benjamin G Dusing</a> | Main founder and investor of World Aid Runners.</p>
        
+        <small><p>William J. Waggoner | Co-founder and co-investor of World Aid Runners</p> </small>
+        <p class="warn"><small><em><strong>The information contained on this site does not reflect William's actions.</strong></em></small></p>
       </section>
 
       <section id="reasoning">
         <h2>Why There Is Concern</h2>
         <p>Multiple individuals have independently raised concerns about the conduct of the charity's representative based on direct interactions and patterns of behavior that raise red flags. While each person may have a different reason, together these accounts suggest a potential pattern of mismanagement or dishonesty.</p>
       
-        <ul class="w">
+        <ul class="warn">
           <li><strong>Lack of Transparency:</strong> Despite repeated requests, legally required financial documents have not been provided, even after deadlines and follow-up attempts.</li>
           <li><strong>Inconsistent Communication:</strong> Emails and messages are often ignored or met with vague responses, which delays resolution and transparency.</li>
           <li><strong>Multiple Independent Complaints:</strong> Separate individuals have come forward with concerns ranging from misuse of funds to misleading statements, with no clear accountability or oversight in place.</li>
@@ -141,7 +145,7 @@
       <section id="submit-request">
         <h2>Send a records request</h2>
         <p>You can use this form to submit a records request to World Aid Runners. You can remain anonymous, or include a name and email to get a response. Otherwise, their responses and reactions will be posted clearly at the top of this page.</p>
-        <form action="https://formspree.io/f/mldbnbzk" method="POST" enctype="multipart/form-data">
+        <form action="https://formspree.io/f/mldbnbzk" method="POST" enctype="multipart/form-data" id="reqform">
 
           <label for="id">Unique Id (for response reference)</label>
           <input type="text" name="id" id="id" required readonly>
@@ -168,12 +172,13 @@ Sincerely,</textarea>
 
 
 
-          <label class="consent">
-            <input type="checkbox" name="consent" required>
+            <label class="consent">
+            <input type="checkbox" name="consent" id="reqcheck" required>
             I consent to this information being collected and stored for review.
-          </label>
+            </label>
 
-          <button type="submit">Submit</button>
+            <button type="submit" id="submit-request-btn" disabled>Submit</button>
+         
 
           <p>This form will be forwarded to Benjamin Dusing and World Aid Runners. Any update to your request will be posted on this website.</p>
 
@@ -192,9 +197,10 @@ Sincerely,</textarea>
         </ul>
         <label for="email">Your Email:</label>
         <input type="email" id="email" name="email" required>
-        <label for="agree"><input type="checkbox" id="agree" name="agree" required> I agree to sign this petition and report Ben Dusing to the authorities for investigation.</label>
-        <button type="submit">Submit</button> 
-        <div id="petition-num">3</div>
+        <label for="agree"><input type="checkbox" id="petcheck" name="agree" required> I agree to sign this petition and report Ben Dusing to the authorities for investigation.</label>
+        <button type="submit" id="submit-petition-btn" disabled>Submit</button>
+       
+        <div id="petition-num">5</div>
       </form>
       
 
@@ -214,32 +220,84 @@ Sincerely,</textarea>
 
     <!-- <script src="/assets/js/global/script.js" defer></script> -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const generateA1B2Code = () => {
-          const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-          const digits = "0123456789";
-          return (
-            letters.charAt(Math.floor(Math.random() * letters.length)) +
-            digits.charAt(Math.floor(Math.random() * digits.length)) +
-            letters.charAt(Math.floor(Math.random() * letters.length)) +
-            digits.charAt(Math.floor(Math.random() * digits.length))
-          );
-        };
-        document.getElementById("id").value = generateA1B2Code();
+      document.addEventListener("DOMContentLoaded", function () {
+      // Generate unique ID
+      const generateA1B2Code = () => {
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const digits = "0123456789";
+        return (
+        letters.charAt(Math.floor(Math.random() * letters.length)) +
+        digits.charAt(Math.floor(Math.random() * digits.length)) +
+        letters.charAt(Math.floor(Math.random() * letters.length)) +
+        digits.charAt(Math.floor(Math.random() * digits.length))
+        );
+      };
+      document.getElementById("id").value = generateA1B2Code();
 
+      // Set today's date
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+      dateInput.value = today;
 
-        const dateInput = document.getElementById("date");
-        const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
-        dateInput.value = today;
+      // Enable/disable buttons based on checkbox
+      const reqcheck = document.getElementById("reqcheck");
+      const petcheck = document.getElementById("petcheck");
+      const reqbutton = document.getElementById("submit-request-btn");
+      const petbutton = document.getElementById("submit-petition-btn");
 
+      reqcheck.addEventListener("change", function () {
+        reqbutton.disabled = !reqcheck.checked;
+        reqbutton.style.backgroundColor = reqcheck.checked ? "#0058a3" : "";
       });
 
-      document.addEventListener("DOMContentLoaded", function() {
-    const dateInput = document.getElementById("date");
-    const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
-    dateInput.value = today;
-  });
+      petcheck.addEventListener("change", function () {
+        petbutton.disabled = !petcheck.checked;
+        petbutton.style.backgroundColor = petcheck.checked ? "#0058a3" : "";
+      });
+
+      // Handle form submission
+      const form = document.getElementById("reqform");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default redirect
+
+        const formData = new FormData(form);
+        fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+        })
+        .then((response) => {
+          if (response.ok) {
+          sessionStorage.setItem("formSubmitted", "true");
+          disableForm();
+          message.style.display = "block";
+          } else {
+          alert("There was a problem submitting your form. Please try again.");
+          }
+        })
+        .catch(() => {
+          alert("Submission failed. Please check your connection.");
+        });
+      });
+
+      // Disable form inputs after submission
+      const disableForm = () => {
+        const inputs = form.querySelectorAll("input, textarea, button");
+        inputs.forEach((input) => {
+        input.disabled = true;
+        });
+      };
+
+      // Success message
+      const message = document.createElement("div");
+      message.innerHTML = "<p class='green'>Thank you for your submission! Your request has been sent.</p>";
+      message.style.display = "none";
+      form.appendChild(message);
+      });
     </script>
+
     
 </body>
 </html>
