@@ -3,6 +3,9 @@ main {
     padding: 40px;
     max-width: 850px;
     margin: auto;
+    li {
+      /* list-style-type: none; */
+    }
   }
 
   @media (max-width: 768px) {
@@ -150,6 +153,7 @@ section {
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
+    word-wrap: break-word;
   }
   .petition {
     margin-left: 2rem;
@@ -182,3 +186,35 @@ section {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
+  @media (max-width: 768px) {
+    #response-counter {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  .quote,
+.green,
+.warn,
+.blue {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.nobull {
+  list-style-type: none;
+  padding-left: 0;
+}
