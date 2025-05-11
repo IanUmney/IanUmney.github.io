@@ -4,6 +4,12 @@ main {
     max-width: 850px;
     margin: auto;
   }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 10px;
+    }
+  }
 .highlight { 
   background: #fffbcc; 
   padding: 0.5rem; 
