@@ -271,3 +271,8 @@ main {
     padding: 0.5rem; 
     border-left: 4px solid #f39c12; 
   }
+  .blue {
+    background-color: #cce5ff;
+    border-left: 4px solid #004085;
+    padding: .5rem;
+  }
