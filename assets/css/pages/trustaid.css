@@ -219,10 +219,10 @@ section {
   padding-left: 0;
 }
 .screenshot > img {
+  max-width: 70%;
   height: auto;
-  width: 50%;
-  object-fit: scale-down;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  display: flex;
-  justify-self: center;
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: auto;
 }
