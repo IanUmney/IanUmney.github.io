@@ -207,6 +207,7 @@ function updateFine() {
     { name: "M3C1", startDate: "2025-05-11" },
     { name: "M3C1", startDate: "2025-05-12" },
     { name: "K5E0", startDate: "2025-05-13" },
+    { name: "B9O2", startDate: "2025-05-13" },
     { name: "D4D6", startDate: "2025-04-13" } // Under grace
   ];
 
