@@ -194,14 +194,68 @@ function setupForms() {
     }
 }
 
+function updateFine() {
+
+  const requests = [
+    { name: "Ian Umney", startDate: "2025-04-25" },
+    { name: "J4H5", startDate: "2025-05-09" },
+    { name: "A7L7", startDate: "2025-05-09" },
+    { name: "T8Y6", startDate: "2025-05-09" },
+    { name: "N0Y9", startDate: "2025-05-09" },
+    { name: "J2R0", startDate: "2025-05-10" },
+    { name: "T4A6", startDate: "2025-05-10" },
+    { name: "M3C1", startDate: "2025-05-11" },
+    { name: "M3C1", startDate: "2025-05-12" },
+    { name: "K5E0", startDate: "2025-05-13" },
+    { name: "D4D6", startDate: "2025-04-13" } // Under grace
+  ];
+
+  const finePerDay = 20;
+  const today = new Date();
+  let totalFine = 0;
+
+  const tableBody = document.querySelector("#fineTable tbody");
+
+  requests.forEach(request => {
+    const requestDate = new Date(request.startDate);
+    const graceEnd = new Date(requestDate);
+    graceEnd.setDate(graceEnd.getDate() + 30);
+
+    let finedDays = 0;
+    if (today > graceEnd) {
+      const diffMs = today - graceEnd;
+      finedDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    }
+
+    const fine = finedDays * finePerDay;
+    totalFine += fine;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${request.name}</td>
+      <td>${requestDate.toLocaleDateString()}</td>
+      <td>${graceEnd.toLocaleDateString()}</td>
+      <td>${finedDays}</td>
+      <td>$${fine.toLocaleString()}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+
+  document.getElementById("totalFine").textContent = `💰 Total Fine Accrued: $${totalFine.toLocaleString()}`;
+}
+
 // Main initialization function
 async function initializePage() {
     setupForms();
     await loadFooter();
     await loadHeader();
     setupHamburgerMenu();
+    await updateFine();
 
 }
 
 // Call the initialization on page load
 document.addEventListener("DOMContentLoaded", initializePage);
+
+
+
