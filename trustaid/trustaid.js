@@ -211,7 +211,11 @@ function updateFine() {
     { name: "T4A6(2)", startDate: "2025-05-11" },
     { name: "K5E0", startDate: "2025-05-12" },
     { name: "D4D6", startDate: "2025-05-13" },
-    { name: "B9O2", startDate: "2025-05-13" } // Under grace
+    { name: "B9O2", startDate: "2025-05-13" },
+    { name: "E3D1", startDate: "2025-05-14" },
+    { name: "J8L6", startDate: "2025-05-14" },
+    { name: "P7U5", startDate: "2025-05-14" },
+    { name: "L5P8", startDate: "2025-05-13" }
   ];
 
   const finePerDay = 20;
