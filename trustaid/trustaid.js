@@ -215,7 +215,8 @@ function updateFine() {
     { name: "E3D1", startDate: "2025-05-14" },
     { name: "J8L6", startDate: "2025-05-14" },
     { name: "P7U5", startDate: "2025-05-14" },
-    { name: "L5P8", startDate: "2025-05-14" }
+    { name: "L5P8", startDate: "2025-05-14" },
+    { name: "C9X9", startDate: "2025-05-14" }
   ];
 
   const finePerDay = 20;
