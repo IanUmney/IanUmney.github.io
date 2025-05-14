@@ -1,0 +1,95 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustAid - Donations to be trusted">
+    <title>TrustAid | Contact</title>
+    <link rel="icon" href="https://s3.us-east-1.amazonaws.com/ianumney.me/src/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/pages/trustaid.css">
+    
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+
+      <section>
+
+        
+      </section>
+
+      <section id="contact">
+          <h1>Send an email to the developer, <a href="https://www.tiktok.com/@ian_umney">Ian Umney</a>. Or <a href="https://donate.stripe.com/7sIdU5bsbglQ8tG4gg">Tip me</a></h1>
+          <p>If you have evidence to upload, email <a href="mailto:contact@ianumney.me">contact@ianumney.me</a> or Telegram: <a href="https://t.me/ian_umney">@ian_umney</a></p>
+          <form action="https://formspree.io/f/xrbqkord" method="POST">
+            <label>Your email: <input type="email" name="email">
+              </label>
+            <label>Your message: <textarea name="message"></textarea>
+              </label>
+            <button type="submit">Send</button>
+          </form>
+        </section>
+
+        <section>
+          <h2>Previous Contact</h2>
+          <p class="green"><em>"Please keep me updated."</em></p>
+          <p class="green"><em>"Thanks for your work and exposing Ben Dusing"</em></p>
+          
+          <section class="green">
+            <em>
+            <p>"Ian, </p>
+            <p>I was a volunteer with WAR for 3 weeks last fall, September-October. I also fundraised $5,400 for WAR in which I personally put into the Free Store account back in the states. Yes I have the receipts for those deposits. When all of this started, I really believed that Ben was legit. Now, I don't think so. I have asked for receipts on December 26, 2024 while having a telephone conversation and again a couple of months ago in another telephone conversation. The last conversation turned into a shouting match.</p>
+            <p>I would like to know how my money was spent. I raised around $3,400 on GiveSendGo,my church donated around $1000, and I personally gave $1000 when I returned in October 2024 from Ukraine.</p>
+            <p>Ben has blocked me from his Facebook site and TikTok because I want to see evidence of how the money was spent!</p>
+            <p>During my three weeks in Kherson, no money was spent on food or supplies for the Free Store. I know for a fact, because I helped pick it up. That we received hundreds of boxes of quick bake cookies from a warehouse in Lutsk, Ukraine. Myself and John Gardner used the two ambulances to pick this up.</p>
+            <p>Ben also talked about a church that was donating food that Samaritans Purse had donated. Much of the food at the Free Store was out of date.</p>
+            <p>While working at the Free Store I noticed that no money was spent even when we low on food supplies.</p>
+            <p>In closing, I will send you copies of the deposits that I made to WAR!</p>
+            <p>Thank you,</p>
+            <p>Jeff Barrett"</p>
+            </em>
+          </section>
+        </section>
+        
+        
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/trustaid/trustaid.js" defer></script>
+
+    <!-- <script src="/assets/js/global/script.js" defer></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const generateA1B2Code = () => {
+          const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          const digits = "0123456789";
+          return (
+            letters.charAt(Math.floor(Math.random() * letters.length)) +
+            digits.charAt(Math.floor(Math.random() * digits.length)) +
+            letters.charAt(Math.floor(Math.random() * letters.length)) +
+            digits.charAt(Math.floor(Math.random() * digits.length))
+          );
+        };
+        document.getElementById("id").value = generateA1B2Code();
+
+
+        const dateInput = document.getElementById("date");
+        const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+        dateInput.value = today;
+
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+    const dateInput = document.getElementById("date");
+    const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    dateInput.value = today;
+  });
+    </script>
+    <a id ="top-link" href="#navbar">Back to top</a>
+    
+</body>
+</html>

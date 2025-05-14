@@ -172,28 +172,6 @@ main {
 }
 
 
-#intro {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    img {
-        height: 120px;
-        border-radius: 25px;
-    }
-    #intro-hosted {
-        display: flex;
-        flex-direction: column;
-
-        gap: 10px;
-    }
-    #ncl-coll {
-        height: 100px;
-    }
-   
-}
-
 #news-brief-header {
     display: flex;
     flex-direction: column;
@@ -255,8 +233,8 @@ main {
 
 /*Small images in timeline*/
 .sml {
-    min-width: 40px;
-    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -265,3 +243,36 @@ main {
 #home-main-about h4 {
     margin-top: 10px; 
 }
+
+#intro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    img {
+        height: 120px;
+        border-radius: 25px;
+    }
+    #intro-hosted {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+    #ncl-coll {
+        height: 100px;
+    }
+   
+}
+
+.highlight { 
+    background: #fffbcc; 
+    padding: 0.5rem; 
+    border-left: 4px solid #f39c12; 
+  }
+  .blue {
+    background-color: #cce5ff;
+    border-left: 4px solid #004085;
+    padding: .5rem;
+  }
