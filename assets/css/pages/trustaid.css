@@ -371,3 +371,9 @@ th {
   font-weight: bold;
   color: darkred;
 }
+
+.JHSC {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
