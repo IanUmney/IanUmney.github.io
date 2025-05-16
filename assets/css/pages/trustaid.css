@@ -9,6 +9,21 @@ main {
   }
 }
 
+.screenshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.screenshot > img {
+  max-width: 70%;
+  max-height: 70vh;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 header {
   height: 60px;
   position: sticky;
@@ -377,20 +392,9 @@ th {
 }
 
 
-.screenshot > img {
-  max-width: 70%;
-  max-height: 70vh;
-  height: auto;
-  object-fit: contain;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.screenshot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
+
+
 
 
 .JHSC {
