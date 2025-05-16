@@ -1,9 +1,13 @@
 /* General Main Styles */
+html {
+  scroll-padding-top: 60px; 
+}
 main {
   font-family: Arial, sans-serif;
   padding: 40px;
   max-width: 850px;
   margin: auto;
+
   li {
     /* list-style-type: none; */
   }
