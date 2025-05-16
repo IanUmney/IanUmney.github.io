@@ -196,61 +196,67 @@ function setupForms() {
 
 function updateFine() {
 
-  const requests = [
-    { name: "Ian Umney", startDate: "2025-04-25" },
-    { name: "V7P7", startDate: "2025-05-09" },
-    { name: "O3I5", startDate: "2025-05-09" },
-    { name: "J4H5(1)", startDate: "2025-05-09" },
-    { name: "J4H5(2)", startDate: "2025-05-09" },
-    { name: "A7L7", startDate: "2025-05-09" },
-    { name: "T8Y6", startDate: "2025-05-09" },
-    { name: "N0Y9", startDate: "2025-05-09" },
-    { name: "J2R0", startDate: "2025-05-10" },
-    { name: "T4A6", startDate: "2025-05-10" },
-    { name: "M3C1", startDate: "2025-05-11" },
-    { name: "T4A6(2)", startDate: "2025-05-11" },
-    { name: "K5E0", startDate: "2025-05-12" },
-    { name: "D4D6", startDate: "2025-05-13" },
-    { name: "B9O2", startDate: "2025-05-13" },
-    { name: "E3D1", startDate: "2025-05-14" },
-    { name: "J8L6", startDate: "2025-05-14" },
-    { name: "P7U5", startDate: "2025-05-14" },
-    { name: "L5P8", startDate: "2025-05-14" },
-    { name: "C9X9", startDate: "2025-05-14" }
-  ];
+    const requests = [
+        { name: "Ian Umney", startDate: "2025-04-25" },
+        { name: "V7P7", startDate: "2025-05-09" },
+        { name: "O3I5", startDate: "2025-05-09" },
+        { name: "J4H5(1)", startDate: "2025-05-09" },
+        { name: "J4H5(2)", startDate: "2025-05-09" },
+        { name: "A7L7", startDate: "2025-05-09" },
+        { name: "T8Y6", startDate: "2025-05-09" },
+        { name: "N0Y9", startDate: "2025-05-09" },
+        { name: "J2R0", startDate: "2025-05-10" },
+        { name: "T4A6", startDate: "2025-05-10" },
+        { name: "M3C1", startDate: "2025-05-11" },
+        { name: "T4A6(2)", startDate: "2025-05-11" },
+        { name: "K5E0", startDate: "2025-05-12" },
+        { name: "D4D6", startDate: "2025-05-13" },
+        { name: "B9O2", startDate: "2025-05-13" },
+        { name: "E3D1", startDate: "2025-05-14" },
+        { name: "J8L6", startDate: "2025-05-14" },
+        { name: "P7U5", startDate: "2025-05-14" },
+        { name: "L5P8", startDate: "2025-05-14" },
+        { name: "C9X9", startDate: "2025-05-14" },
+        { name: "V2S1", startDate: "2025-05-16" },
+        { name: "Z7I6", startDate: "2025-05-16" },
+    ];
 
-  const finePerDay = 20;
-  const today = new Date();
-  let totalFine = 0;
+    const today = new Date();
+    const finePerDay = 5; // Fine amount per day past due
+    let totalFine = 0;
 
-  const tableBody = document.querySelector("#fineTable tbody");
+    const tableBody = document.querySelector("#fineTable tbody");
+    tableBody.innerHTML = ""; // Clear existing rows
 
-  requests.forEach(request => {
-    const requestDate = new Date(request.startDate);
-    const graceEnd = new Date(requestDate);
-    graceEnd.setDate(graceEnd.getDate() + 30);
+    requests.forEach(request => {
+        const requestDate = new Date(request.startDate);
+        const graceEnd = new Date(requestDate);
+        graceEnd.setDate(graceEnd.getDate() + 30);
 
-    let finedDays = 0;
-    if (today > graceEnd) {
-      const diffMs = today - graceEnd;
-      finedDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-    }
+        let countdownDays = 0;
+        let fine = 0;
 
-    const fine = finedDays * finePerDay;
-    totalFine += fine;
+        if (today <= graceEnd) {
+            const diffMs = graceEnd - today;
+            countdownDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+        } else {
+            const overdueMs = today - graceEnd;
+            const overdueDays = Math.ceil(overdueMs / (1000 * 60 * 60 * 24));
+            fine = overdueDays * finePerDay;
+            totalFine += fine;
+        }
 
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${request.name}</td>
-      <td>${requestDate.toLocaleDateString()}</td>
-      <td>${graceEnd.toLocaleDateString()}</td>
-      <td>${finedDays}</td>
-      <td>$${fine.toLocaleString()}</td>
-    `;
-    tableBody.appendChild(row);
-  });
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${request.name}</td>
+            <td>${requestDate.toLocaleDateString()}</td>
+            <td>${countdownDays > 0 ? `${countdownDays} days left` : "Past due"}</td>
+            <td>${fine > 0 ? `$${fine}` : "-"}</td>
+        `;
+        tableBody.appendChild(row);
+    });
 
-  document.getElementById("totalFine").textContent = `💰 Total Fine Accrued: $${totalFine.toLocaleString()}`;
+    document.getElementById("totalFine").textContent = `💰 Total Fine Accrued: $${totalFine}`;
 }
 
 // Main initialization function
@@ -259,12 +265,8 @@ async function initializePage() {
     await loadFooter();
     await loadHeader();
     setupHamburgerMenu();
-    await updateFine();
-
+    updateFine();
 }
 
 // Call the initialization on page load
 document.addEventListener("DOMContentLoaded", initializePage);
-
-
-
