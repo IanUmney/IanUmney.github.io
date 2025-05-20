@@ -106,7 +106,5 @@ let newsData = [];
         //         `;
         //         newsTable.appendChild(row);
         //     });
-
-        // }
     }
-        fetchRSSFeed();
+fetchRSSFeed();
