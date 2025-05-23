@@ -15,9 +15,18 @@ main {
 
 .screenshot {
   display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 20px 0;
+  max-width: 40%;
+}
+
+#doxxing {
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+  gap: 20px;
 }
 
 .screenshot > img {
@@ -394,13 +403,6 @@ th {
     gap: 0.5rem;
   }
 }
-
-
-
-
-
-
-
 .JHSC {
   display: flex;
   gap: 20px;
