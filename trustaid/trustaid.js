@@ -223,7 +223,8 @@ function updateFine() {
         { name: "R1K1", startDate: "2025-05-21" },
         { name: "I6R1", startDate: "2025-05-21" },
         { name: "D9H2", startDate: "2025-05-21" },
-        { name: "A1W2", startDate: "2025-05-23" }
+        { name: "A1W2", startDate: "2025-05-23" },
+        { name: "B0Q2", startDate: "2025-05-23" }
     ];
 
     const today = new Date();
