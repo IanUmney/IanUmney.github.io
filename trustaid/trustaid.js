@@ -227,7 +227,7 @@ function updateFine() {
     ];
 
     const today = new Date();
-    const finePerDay = 5; // Fine amount per day past due
+    const finePerDay = 20; // Fine amount per day past due
     let totalFine = 0;
 
     const tableBody = document.querySelector("#fineTable tbody");
