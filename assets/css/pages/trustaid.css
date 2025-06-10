@@ -46,6 +46,10 @@ header {
   flex-direction: column; 
   justify-content: center; 
   height: 100%;
+  a {
+  text-decoration: none;
+  color: black;
+  }
 }
 
 /* Highlighted, Important, and General Text Styles */
