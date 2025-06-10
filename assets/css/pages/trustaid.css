@@ -8,9 +8,6 @@ main {
   max-width: 850px;
   margin: auto;
 
-  li {
-    /* list-style-type: none; */
-  }
 }
 
 .screenshot {

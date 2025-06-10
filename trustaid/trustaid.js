@@ -259,6 +259,8 @@ function updateFine() {
     document.getElementById("totalFine").textContent = `💰 Total Fine Accrued: $${totalFine}`;
 }
 
+
+
 // Main initialization function
 async function initializePage() {
     setupForms();
