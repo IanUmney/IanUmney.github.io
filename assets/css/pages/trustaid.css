@@ -8,9 +8,6 @@ main {
   max-width: 850px;
   margin: auto;
 
-  li {
-    /* list-style-type: none; */
-  }
 }
 
 .screenshot {
@@ -46,6 +43,10 @@ header {
   flex-direction: column; 
   justify-content: center; 
   height: 100%;
+  a {
+  text-decoration: none;
+  color: black;
+  }
 }
 
 /* Highlighted, Important, and General Text Styles */
