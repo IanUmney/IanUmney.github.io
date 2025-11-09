@@ -1,7 +1,7 @@
 let newsData = [];
 
-    async function fetchRSSFeed() {
-        try {
+async function fetchRSSFeed(onNewItems) {
+    try {
         const rssFeeds = [
             "https://kyivindependent.com/news-archive/feed",
             "https://blogs.prio.org/category/ukraine-war/feed/",
@@ -20,91 +20,73 @@ let newsData = [];
             "https://metro.co.uk/news/world/feed/",
         ];
 
-            const responses = await Promise.all(rssFeeds.map(feed => 
-                fetch(`https://api.rss2json.com/v1/api.json?api_key=l44lexdlqbkdrpm4hhyhxn7djiomb4vywtus80lj&rss_url=${encodeURIComponent(feed)}`)
-            ));
+        const fourteenDaysAgo = new Date();
+        fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
 
-            const data = await Promise.all(responses.map(response => response.json()));
+        for (const feed of rssFeeds) {
+            try {
+                const response = await fetch(`https://api.rss2json.com/v1/api.json?api_key=l44lexdlqbkdrpm4hhyhxn7djiomb4vywtus80lj&rss_url=${encodeURIComponent(feed)}`);
+                const feedData = await response.json();
 
-            const fourteenDaysAgo = new Date();
-            fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
-
-            data.forEach(feedData => {
-                console.log(feedData.status);
                 if (feedData.status === 'ok') {
                     let items = feedData.items;
 
-                    // Filter sources which have open RSS feeds
+                    // Filter sources with open RSS feeds
                     if (feedData.feed.url.includes('feeds.bbci.co.uk') ||
                         feedData.feed.url.includes('skynews.com') ||
                         feedData.feed.url.includes('gbnews.com') ||
                         feedData.feed.url.includes('independent.co.uk') ||
                         feedData.feed.url.includes('metro.co.uk')) {
-                    items = items.filter(item => 
-                        item.title.toLowerCase().includes('ukraine') || 
-                        item.title.toLowerCase().includes('russia') ||
-                        item.title.toLowerCase().includes('putin') ||
-                        item.title.toLowerCase().includes('zelensky'));
+                        items = items.filter(item =>
+                            item.title.toLowerCase().includes('ukraine') ||
+                            item.title.toLowerCase().includes('russia') ||
+                            item.title.toLowerCase().includes('putin') ||
+                            item.title.toLowerCase().includes('zelensky'));
                     }
 
                     // Filter articles from the last 14 days
                     items = items.filter(item => new Date(item.pubDate) >= fourteenDaysAgo);
 
+                    // Remove duplicates
+                    const uniqueTitles = new Set(newsData.map(item => item.title));
+                    items = items.filter(item => !uniqueTitles.has(item.title));
+
                     newsData.push(...items);
-                } 
-            });
+                    newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-            newsData.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-            const uniqueTitles = new Set();
-            newsData = newsData.filter(item => {
-                if (uniqueTitles.has(item.title)) {
-                    return false;
-                } else {
-                    uniqueTitles.add(item.title);
-                    return true;
+                    // Render new items incrementally
+                    onNewItems(items);
                 }
-            });
-
-            renderTable(newsData);
-
-        } catch (error) {
-            console.error('Error fetching RSS feed:', error);
+            } catch (error) {
+                console.error(`Error fetching feed: ${feed}`, error);
+            }
         }
+    } catch (error) {
+        console.error('Error fetching RSS feeds:', error);
     }
+}
 
-    function extractDomain(url) {
-        try {
-            const domain = new URL(url).hostname;
-            return domain.replace('www.', '');
-        } catch (error) {
-            console.error('Invalid URL:', url);
-            return 'Unknown';
-        }
+function extractDomain(url) {
+    try {
+        const domain = new URL(url).hostname;
+        return domain.replace('www.', '');
+    } catch (error) {
+        console.error('Invalid URL:', url);
+        return 'Unknown';
     }
+}
 
-    function renderTable(data) {
-        if (document.getElementById('news-brief-log') !== null) {
-            const newsList = document.getElementById("news-brief-log");
-            newsList.innerHTML = ''; // Clear existing rows
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
-                `;
-                newsLsit.appendChild(row);
-            });
-        }
-        // } else if (document.getElementById('newsTable')) {
-        //     const newsTable = document.getElementById('newsTable');
-        //     newsTable.innerHTML = ''; // Clear existing rows
-        //     data.forEach(item => {
-        //         const row = document.createElement('tr');
-        //         row.innerHTML = `
-        //             <td>- <a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
-        //             <td>${new Date(item.pubDate).toLocaleDateString('en-GB')}</td>
-        //             <td>${extractDomain(item.link)}</td>
-        //         `;
-        //         newsTable.appendChild(row);
-        //     });
+function renderTable(data) {
+    if (document.getElementById('news-brief-log') !== null) {
+        const newsList = document.getElementById("news-brief-log");
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><a class="visited-link" href="${item.link}" target="_blank">${item.title}</a></td>
+            `;
+            newsList.appendChild(row);
+        });
     }
-fetchRSSFeed();
+}
+
+window.fetchRSSFeed = fetchRSSFeed;

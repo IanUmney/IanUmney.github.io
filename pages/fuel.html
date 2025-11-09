@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jerry Can Fundraiser Fill</title>
+  <style>
+    :root {
+      --fill: 0.42;          /* 0.0 to 1.0 */
+      --can-width: 280px;    /* easy resizing */
+      --accent: #ffd500;     /* liquid color */
+      --stroke: #1f2937;     /* outline color */
+      --bg: #0b1020;         /* page background */
+      --panel: #0f172a;
+      --text: #e5e7eb;
+      --muted: white;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      /* background: linear-gradient(to top, #FFDD00 0%, #0057B7 100%); */
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(980px, 100%);
+      background: linear-gradient(to top, #FFDD00 0%, #0057B7 100%);
+      border: 2px solid #0057B7;
+      border-radius: 20px;
+      padding: 24px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    @media (max-width: 900px){ .grid { grid-template-columns: 1fr; } }
+
+    h1 { 
+      margin: 0 0 16px; 
+      font-size: clamp(20px, 2.4vw, 30px);
+      letter-spacing: 0.2px;
+    }
+    p { margin: 6px 0 14px; color: var(--muted); }
+
+    .can-wrap { display: grid; place-items: center; }
+    .can {
+      width: var(--can-width);
+      height: calc(var(--can-width) * 1.2);
+      position: relative;
+    }
+
+    /* Percentage badge */
+    .pct {
+      position: absolute;
+      inset: auto 10px 10px auto;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 8px 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Form */
+    .controls { 
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; 
+      padding: 16px; 
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .row + .row { margin-top: 12px; }
+
+    label { font-size: 14px; color: var(--muted); display: block; margin-bottom: 6px; }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline: none;
+    }
+    input:focus { border-color: rgba(255,255,255,0.25); }
+
+    .btn {
+      margin-top: 10px;
+      display: inline-grid; place-items: center;
+      padding: 12px 16px; border-radius: 12px;
+      background: var(--accent);
+      color: white; border: none; font-weight: 700; cursor: pointer;
+      transition: transform .08s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+
+    .stat {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;
+      font-variant-numeric: tabular-nums; font-size: 14px;
+    }
+    .stat div { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; border-radius: 10px; }
+
+    /* SVG styling */
+    svg { width: 100%; height: 100%; display: block; }
+
+    /* Liquid anim */
+    .liquid {
+      transform-origin: 50% 100%;
+      transform: scaleY(var(--fill));
+      transition: transform 900ms cubic-bezier(.22,1,.36,1);
+      filter: drop-shadow(0 6px 6px rgba(225,29,72,0.35));
+    }
+    .wave { animation: wave 4s linear infinite; opacity: .25; }
+    @keyframes wave { to { transform: translateX(-120px); } }
+
+    .goal-line { stroke-dasharray: 4 6; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    .dark-text {
+      color: #111827;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>FUEL RESERVE FUND</h1>
+    <p>It can cost over £1,000 in fuel and tolls for a round trip to deliver aid.</p>
+
+    <div class="grid">
+      <div class="can-wrap">
+        <div class="can" aria-labelledby="meter-label" role="img">
+          <svg viewBox="0 0 220 270" aria-hidden="true">
+            <defs>
+              <clipPath id="canBodyClip" clipPathUnits="userSpaceOnUse">
+                <rect x="30" y="60" rx="18" ry="18" width="160" height="180" />
+              </clipPath>
+              <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="var(--accent)" stop-opacity="0.75"/>
+              </linearGradient>
+              <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+              </linearGradient>
+              <pattern id="wave" width="120" height="14" patternUnits="userSpaceOnUse">
+                <path d="M0,7 C10,0 20,14 30,7 S50,0 60,7 80,14 90,7 110,0 120,7" fill="none" stroke="blue" stroke-width="3"/>
+              </pattern>
+            </defs>
+
+            <g clip-path="url(#canBodyClip)">
+              <g class="liquid">
+                <rect x="30" y="60" width="160" height="180" fill="url(#liquidGrad)" />
+                <rect class="wave" x="0" y="110" width="260" height="20" fill="url(#wave)" opacity=".45"/>
+              </g>
+              <rect x="30" y="60" width="160" height="180" fill="url(#glassGrad)"/>
+            </g>
+
+            <rect x="140" y="30" width="38" height="30" rx="6" ry="6" fill="#a3a3a3" stroke="var(--stroke)" stroke-width="3"/>
+            <rect x="168" y="22" width="16" height="12" rx="3" ry="3" fill="#c4c4c4" stroke="var(--stroke)" stroke-width="3"/>
+            <rect x="30" y="60" width="160" height="180" rx="18" ry="18" fill="none" stroke="var(--stroke)" stroke-width="6"/>
+            <path d="M60 60 h70 a12 12 0 0 1 12 12 v10 h-20 v-6 a6 6 0 0 0 -6 -6 H60 z" fill="#c4c4c4" stroke="var(--stroke)" stroke-width="4"/>
+            <path d="M50 90 L170 210 M170 90 L50 210" stroke="rgba(255,255,255,0.14)" stroke-width="10" stroke-linecap="round"/>
+            <path d="M50 90 L170 210 M170 90 L50 210" stroke="rgba(0,0,0,0.25)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div>
+          <div class="stat dark-text">
+            <div id="current" contenteditable="true">Raised:<br/><strong><span>2</span></strong></div>
+            <div id="goal" contenteditable="true">Goal:<br/><strong><span>1000</span></strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const currentSpan = currentEl.querySelector("span");
+    const goalSpan = goalEl.querySelector("span");
+
+    function clamp(n, min, max) {
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function setProgress() {
+      const raised = parseFloat(currentSpan.innerText) || 0;
+      const goal = parseFloat(goalSpan.innerText) || 1;
+
+      let fill = clamp(raised / goal, 0, 1);
+      if (fill === 1) fill = 0.999; // prevents the “empty at full” bug
+
+      document.documentElement.style.setProperty('--fill', fill);
+    }
+
+    currentEl.addEventListener('input', setProgress);
+    goalEl.addEventListener('input', setProgress);
+
+    setProgress();
+
+  </script>
+</body>
+</html>

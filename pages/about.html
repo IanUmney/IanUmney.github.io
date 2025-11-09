@@ -7,16 +7,34 @@
     <meta name="description" content="About Ian Umney and This Website. I was born in the north of England in '93 and moved to the south towards the end of the decade. My family and I moved abroad.">
     <meta name="keywords" content="Ian Umney, About, Web Development">
     <meta name="author" content="Ian Umney">
-    <link rel="stylesheet" href="/assets/css/global/style.css">
+    <link rel="stylesheet" href="/assets/css/pages/loading.css">
+    <link rel="stylesheet" href="/assets/css/global/styleCopy.css">
     <link rel="icon" href="https://s3.us-east-1.amazonaws.com/ianumney.me/src/favicon-32x32.png" type="image/png">
 
     <title>About</title>
 </head>
 <body>
+
     <header>
         <!--This header will load automatically-->
     </header>
-    <main>
+<!-- 
+    <section id="loader">
+        <div class="car-container">
+            <div class="car">
+              <div class="window"></div>
+              <div class="cargo-details"></div>
+              <div class="door"></div>
+              <div class="lights"></div>
+            </div>
+            <div class="wheels wheels1"></div>
+            <div class="wheels wheels2"></div>
+            <div class="street"></div>
+            <div class="post"></div>
+        </div>
+    </section> -->
+
+    <main id="content">
         <p><h1>About</h1></p>
         <div id="main-content">
             <div id="topic">
@@ -38,29 +56,45 @@
 
                 <div>
                     <h2>1998</h2>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img class="sml" src="/moving-truck.png" alt="Moving">
                         <p>Moved to Kent, United Kingdom.</p>
                     </div>
+                </div>
                 <hr class="hr">
 
                 <div>
                     <h2>2001</h2>
-                    <p>Moved to Paraparaumu, New Zealand.</p>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img class="sml" src="/moving-truck.png" alt="Moving">
+                        <p>Moved to Paraparaumu, New Zealand.</p>
+                    </div>
                 </div>
                 <hr class="hr">
                 <div>
                     <h2>2005</h2 >
-                    <p>Moved to Kalgoorlie, Australia.</p>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img class="sml" src="/moving-truck.png" alt="Moving">
+                        <p>Moved to Kalgoorlie, Australia.</p>
+                    </div>
+                    <section>
+                        <p>WA state </p>
+                    </section>
                 </div>
                 <hr class="hr">
                 <div>
                     <h2>2008</h2 >
-                    <p>Moved to Oberursel, Germany.</p>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img class="sml" src="/moving-truck.png" alt="Moving">
+                        <p>Moved to Oberursel, Germany.</p>
+                    </div>
                 </div>
-                <h4>2009 - 2011</h4>
+                <h4>2008 - 2011</h4>
                 <div style="display: flex; gap: 10px; align-items: center;">
                     <img class="sml" src="/certificate.png" alt="Education">
                     <p>IB Diploma Program - Frankfurt International School</p>
                 </div>
+                <p>Varsity Rugby Union</p>
 
                 <div>
                 <hr class="hr">
@@ -118,7 +152,7 @@
                     <h4>2023 - 2024</h4>
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <img class="sml" src="/work.png" alt="work">
-                        <p>Warehouse Operative / Shift Supervisor</p>
+                        <p>Warehouse FLT Operative / Shift Supervisor, FH Brundle</p>
                     </div>
                 </div>
                 <hr class="hr">
@@ -126,7 +160,11 @@
                     <h2>2025</h2>
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <img class="sml" src="/certificate.png" alt="Education">
-                        <p>Full Stack Web Application Development</p>
+                        <p>Level 5 Diploma - Full Stack Web Application Development</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <img class="sml" src="/work.png" alt="work">
+                        <p>Warehouse FLT Operative, Farmfoods Distribution</p>
                     </div>
                 </div>
                 <hr class="hr">
@@ -157,7 +195,16 @@
                 <li><a href="https://www.dailymail.co.uk/news/article-10572691/British-father-vowed-stay-fight-travelling-1-700-miles-Ukraine-plans-flee.html">Daily Mail - British but Ukrainian first: UK father shares hopes to take son back to Ukraine</a></li>
                 <li><a href=""></a></li>
             </ul> -->
-        </div>
+        <!-- </div> -->
+        <script>
+            window.addEventListener("load", function() {
+                const loader = document.getElementById("loader");
+                const content = document.getElementById("content");
+
+                loader.style.display = "none";
+                content.style.display = "block";
+            });
+        </script>
     </main>
     <footer>
         <!-- This footer will load automatically-->
@@ -165,5 +212,14 @@
     <script src="/assets/js/global/cookie.js" defer></script> <!-- Called first on all pages to ensure cookie consent -->
     <script src="/assets/js/global/script.js" defer></script>
     <script async src="https://www.tiktok.com/embed.js" defer></script>
+    <script>
+        window.addEventListener("load", function() {
+          const loader = document.getElementById("loader");
+          const content = document.getElementById("content");
+      
+          loader.style.display = "block";
+          content.style.display = "none";
+        });
+      </script>
 </body>
 </html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aid for Ukraine</title>
+    <link rel="stylesheet" href="ukraine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <h1>Aid for Ukraine</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="vertical-section">
+            <h2>Welcome</h2>
+            <p>Supporting humanitarian efforts in Ukraine.</p>
+            <a href="#donate" class="button">Donate Now</a>
+        </section>
+
+        <section id="projects" class="vertical-section">
+            <h2>Our Projects</h2>
+            <div class="horizontal-scroll">
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <h3>Project 1 Title</h3>
+                    <p>Brief description of project 1.</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Project 2 Title</h3>
+                    <p>Brief description of project 2.</p>
+                </div>
+                <!-- Add more project cards -->
+            </div>
+        </section>
+
+        <section id="gallery" class="vertical-section">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="images/gallery1.jpg" alt="Gallery Image 1">
+                <img src="images/gallery2.jpg" alt="Gallery Image 2">
+                <!-- Add more gallery images -->
+            </div>
+        </section>
+
+        <section id="donate" class="vertical-section">
+            <h2>Donate</h2>
+            <p>Support our upcoming convoy:</p>
+            <div class="donation-options">
+                <div class="donation-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <p>Fuel: $500</p>
+                    <button class="donate-button" data-item="fuel">Donate</button>
+                </div>
+                <div class="donation-item">
+                    <i class="fas fa-utensils"></i>
+                    <p>Food: $1000</p>
+                    <button class="donate-button" data-item="food">Donate</button>
+                </div>
+                <!-- Add more donation items -->
+            </div>
+
+            <p>Total Convoy Cost: $5000</p>
+            <button class="button">Donate Generally</button>
+        </section>
+
+        <section id="volunteer" class="vertical-section">
+            <h2>Volunteer</h2>
+            <form id="volunteer-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills"></textarea><br><br>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="news" class="vertical-section">
+            <h2>News & Updates</h2>
+            <form id="newsletter-form">
+                <label for="email">Subscribe to our newsletter:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aid for Ukraine</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

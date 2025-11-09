@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #news-ticker {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: ticker 15s linear infinite;
+        }
+        #news-ticker a {
+            display: inline-block;
+            padding: 0 2rem;
+            text-decoration: none;
+            color: #000;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div id="news-ticker"></div>
+    <script src="/assets/js/global/news.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ticker = document.getElementById('news-ticker');
+            fetchRSSFeed((newItems) => {
+                newItems.forEach(item => {
+                    const link = document.createElement('a');
+                    link.href = item.link;
+                    link.target = '_blank';
+                    link.textContent = item.title;
+                    ticker.appendChild(link);
+                });
+
+                // Ensure the animation accounts for the full content width
+                const tickerWidth = ticker.scrollWidth;
+                const viewportWidth = ticker.offsetWidth;
+                if (tickerWidth > viewportWidth) {
+                    ticker.style.animationDuration = `${tickerWidth / 50}s`; // Adjust speed dynamically
+                }
+            });
+        });
+    </script>
+</body>
+</html>
